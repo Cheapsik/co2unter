@@ -1,0 +1,14 @@
+{
+    "profiles": {
+        "Container (Dockerfile)": {
+            "commandName": "Docker"
+        },
+        "co2unter.Cli[seed-all]": {
+            "commandName": "Project",
+            "commandLineArgs": "seed-all",
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        }
+    }
+}

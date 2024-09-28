@@ -2,10 +2,10 @@
 
 public class TransportEmission
 {
-    public string TransportType { get; private set; } = default!;
-    public double TotalCO2EmissionsKg { get; private set; }
-    public double TotalDistanceKm { get; private set; }
-    public int Year { get; private set; }
+    public string TransportType { get; set; } = default!;
+    public double TotalCO2EmissionsKg { get; set; }
+    public double TotalDistanceKm { get; set; }
+    public int Year { get; set; }
 
     public TransportEmission()
     {
