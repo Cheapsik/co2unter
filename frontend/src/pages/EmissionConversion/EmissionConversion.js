@@ -43,7 +43,7 @@ const EmissionConversion = () => {
 
     return (
         <div className="emission-conversion-container">  
-            <h1>Kalkulator Pochłaniania CO² przez Drzewa</h1>
+            <h1>Kalkulator Pochłaniania CO₂ przez Drzewa</h1>
             <div className="tree-calculator-container">
                 <form className="calculator-form" onSubmit={handleSubmit}>
                     <label htmlFor="tree-type">Typ Drzewa:</label>

@@ -88,7 +88,7 @@ const EmissionCalculator = () => {
 
   return (
     <div className="calculator-container">
-        <h1>Kalkulator emisji CO²</h1>
+        <h1>Kalkulator emisji CO₂</h1>
       <form onSubmit={handleSubmit} className="calculator-form">
         <div className="form-group">
             <label>Nazwa wpisu:</label>

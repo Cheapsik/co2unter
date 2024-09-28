@@ -43,11 +43,11 @@ const EmissionList = ({ taskList }) => {
                     </div>
                     {task.detailsVisible && (
                         <div className="task-details">
-                            <p>Emisje  CO² z transportu: {task.emissions.transportEmissions} kg</p>
-                            <p>Emisje  CO² z diety: {task.emissions.dietEmissions} kg</p>
-                            <p>Emisje  CO² z zużycia wody: {task.emissions.waterEmissions} kg</p>
-                            <p>Emisje  CO² z odpadów: {task.emissions.wasteEmissions} kg</p>
-                            <p><strong>Łączne emisje  CO²: {task.emissions.totalEmissions} kg</strong></p>
+                            <p>Emisje  CO₂ z transportu: {task.emissions.transportEmissions} kg</p>
+                            <p>Emisje  CO₂ z diety: {task.emissions.dietEmissions} kg</p>
+                            <p>Emisje  CO₂ z zużycia wody: {task.emissions.waterEmissions} kg</p>
+                            <p>Emisje  CO₂ z odpadów: {task.emissions.wasteEmissions} kg</p>
+                            <p><strong>Łączne emisje  CO₂: {task.emissions.totalEmissions} kg</strong></p>
                         </div>
                     )}
                 </li>

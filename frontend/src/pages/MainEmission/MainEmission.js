@@ -62,7 +62,7 @@ const MainEmission = () => {
             <div className="circle-progress">
                 <CircularProgressbar
                     value={progressPercentage}
-                    text={`${totalCO2}kg CO²`}
+                    text={`${totalCO2}kg CO₂`}
                     maxValue={100}
                     styles={buildStyles({
                         pathColor: '#16a085',
@@ -72,7 +72,7 @@ const MainEmission = () => {
                 />
             </div>
 
-            <button className="redirect-button" onClick={goTo}>Dodaj emisję  CO²</button>
+            <button className="redirect-button" onClick={goTo}>Dodaj emisję  CO₂</button>
 
             <div className="recent-journeys">
                 <h3>Ostatnie podróże</h3>
