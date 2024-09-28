@@ -44,6 +44,7 @@
     container_name: co2unter-nginx
     volumes:
       - ./reverseProxy/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./reverseProxy/app.apk:/var/www/html/app.apk
     ports:
       - "80:80"
     depends_on:
