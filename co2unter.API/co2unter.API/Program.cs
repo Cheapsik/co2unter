@@ -1,3 +1,4 @@
+using co2unter.API;
 using co2unter.API.Interfaces;
 using co2unter.API.Services;
 
@@ -14,6 +15,8 @@ builder.Services.AddScoped<ITransportEmissionsService, TransportEmissionsService
 builder.Services.AddScoped<IServiceEmissionsService, ServiceEmissionsService>();
 builder.Services.AddScoped<ITreeEmissionEffectivityCalculateService, TreeEmissionEffectivityCalculateService>();
 builder.Services.AddScoped<ICarbonEmissionService, CarbonEmissionService>();
+
+builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 
