@@ -1,8 +1,11 @@
 .event-wrapper{
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 1rem;
+
   &.header  {
+    margin-top: 1rem;
     font-weight: bold;
   }
 }
