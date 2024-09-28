@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         webView = findViewById(R.id.webView);
         webView.setWebViewClient(new WebViewClient());
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl("http://10.0.2.2:3000");
+        webView.loadUrl("https://co2unter.redtm.pl");
 
         OnBackPressedCallback callback = new OnBackPressedCallback(true) {
             @Override
