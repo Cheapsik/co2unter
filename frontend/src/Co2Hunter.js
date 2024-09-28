@@ -25,7 +25,6 @@ const Co2Hunter = () => {
     <div className="App">
       <Router>
             <Nav />
-
             <Routes>
               <Route path="/" element={<Home />} />
                 {sections.map((section, idx) => (

@@ -1,14 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './EmissionCalculator.scss';
+import EmissionList from '../../components/EmissionList/EmissionList';
 
 const EmissionCalculator = () => {
+  const [taskList, setTaskList] = useState(() => {
+        const storedTasks = JSON.parse(localStorage.getItem('tasks'));
+        return storedTasks || [];
+    });
+
   const [distance, setDistance] = useState(0);
   const [transportType, setTransportType] = useState('car');
   const [dietType, setDietType] = useState('meat');
   const [waterUsage, setWaterUsage] = useState(0);
   const [waste, setWaste] = useState(0);
-  const [taskList, setTaskList] = useState([]);
   const [taskName, setTaskName] = useState('');
+
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(taskList));
+  }, [taskList]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,28 +30,28 @@ const EmissionCalculator = () => {
   const calculateEmissions = () => {
     let transportEmissions = 0;
     if (transportType === 'car') {
-      transportEmissions = (distance * 0.2).toFixed(2); // 0.2 kg CO2/km
+      transportEmissions = (distance * 0.2).toFixed(2);
     } else if (transportType === 'public transport') {
-      transportEmissions = (distance * 0.05).toFixed(2); // 0.05 kg CO2/km
+      transportEmissions = (distance * 0.05).toFixed(2);
     } else if (transportType === 'bike') {
-      transportEmissions = 0; // 0 kg CO2
+      transportEmissions = 0;
     } else if (transportType === 'walking') {
-      transportEmissions = 0; // 0 kg CO2
+      transportEmissions = 0;
     }
 
     let dietEmissions = 0;
     if (dietType === 'meat') {
-      dietEmissions = 2.5; // kg CO2/meal
+      dietEmissions = 2.5;
     } else if (dietType === 'vegetarian') {
-      dietEmissions = 1.5; // kg CO2/meal
+      dietEmissions = 1.5;
     } else if (dietType === 'vegan') {
-      dietEmissions = 1; // kg CO2/meal
+      dietEmissions = 1;
     } else if (dietType === 'mediterranean') {
-      dietEmissions = 1.2; // kg CO2/meal
+      dietEmissions = 1.2;
     }
 
-    const waterEmissions = (waterUsage * 0.02).toFixed(2); // 0.02 kg CO2/liter
-    const wasteEmissions = (waste * 0.5).toFixed(2); // 0.5 kg CO2/kg waste
+    const waterEmissions = (waterUsage * 0.02).toFixed(2);
+    const wasteEmissions = (waste * 0.5).toFixed(2); 
 
     return {
       transportEmissions,
@@ -67,18 +77,6 @@ const EmissionCalculator = () => {
     setTaskList((prev) => [...prev, newTask]);
   };
 
-  const removeTask = (id) => {
-    setTaskList((prev) => prev.filter((task) => task.id !== id));
-  };
-
-  const toggleDetails = (id) => {
-    setTaskList((prev) =>
-      prev.map((task) =>
-        task.id === id ? { ...task, detailsVisible: !task.detailsVisible } : task
-      )
-    );
-  };
-
   const resetForm = () => {
     setDistance(0);
     setTransportType('car');
@@ -90,7 +88,7 @@ const EmissionCalculator = () => {
 
   return (
     <div className="calculator-container">
-      <h1>Kalkulator Emisji CO2</h1>
+        <h1>Kalkulator emisji CO²</h1>
       <form onSubmit={handleSubmit} className="calculator-form">
         <div className="form-group">
             <label>Nazwa wpisu:</label>
@@ -128,32 +126,10 @@ const EmissionCalculator = () => {
         </div>
         <button type="submit" className="submit-button">Dodaj do listy</button>
       </form>
-
-      <h2>Wpisy:</h2>
-      <ul className="task-list">
-        {taskList.map((task) => (
-          <li key={task.id} className="task-item">
-            <div className="task-summary">
-              <span>{`${task.name} - ${task.distance} km`}</span>
-              <div>
-                <button onClick={() => toggleDetails(task.id)} className="toggle-button">
-                    {task.detailsVisible ? 'Ukryj szczegóły' : 'Pokaż więcej'}
-                </button>
-                <button onClick={() => removeTask(task.id)} className="remove-button">Usuń</button>
-              </div>
-            </div>
-            {task.detailsVisible && (
-              <div className="task-details">
-                <p>Emisje CO2 z transportu: {task.emissions.transportEmissions} kg</p>
-                <p>Emisje CO2 z diety: {task.emissions.dietEmissions} kg</p>
-                <p>Emisje CO2 z zużycia wody: {task.emissions.waterEmissions} kg</p>
-                <p>Emisje CO2 z odpadów: {task.emissions.wasteEmissions} kg</p>
-                <p><strong>Łączne emisje CO2: {task.emissions.totalEmissions} kg</strong></p>
-              </div>
-            )}
-          </li>
-        ))}
-      </ul>
+      <div className="emission-list-container">
+        <h2>Wpisy:</h2>
+        <EmissionList taskList={taskList} />
+      </div>
     </div>
   );
 };

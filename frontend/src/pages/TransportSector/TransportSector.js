@@ -24,7 +24,7 @@ const TransportSector = () => {
   };
 
   return (
-    <div className="container">
+    <div className="transport-container">
       <h1>Transport i Emisje CO2</h1>
 
       <section className="description">
@@ -63,16 +63,6 @@ const TransportSector = () => {
             </p>
           </div>
         )}
-      </section>
-
-      <section className="other-sectors">
-        <h2>Podsumowanie</h2>
-        <p>
-          Wybór środka transportu ma kluczowe znaczenie dla ochrony środowiska. Zmiana nawyków
-          transportowych, takich jak korzystanie z komunikacji miejskiej lub roweru, może
-          znacząco zmniejszyć emisje CO2. Świadomość wpływu transportu na środowisko
-          jest pierwszym krokiem do podejmowania bardziej zrównoważonych decyzji.
-        </p>
       </section>
     </div>
   );
