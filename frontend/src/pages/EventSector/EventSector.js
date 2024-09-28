@@ -12,7 +12,7 @@ const EventSector = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('https://localhost:7265/api/MassEvent/all');
+      const response = await fetch('https://krakco2.pl/api/MassEvent/all');
       const data = await response.json();
       setEventData(data);
     };
