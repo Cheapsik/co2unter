@@ -14,6 +14,7 @@ builder.Services.AddScoped<ITransportEmissionsService, TransportEmissionsService
 builder.Services.AddScoped<IServiceEmissionsService, ServiceEmissionsService>();
 builder.Services.AddScoped<ITreeEmissionEffectivityCalculateService, TreeEmissionEffectivityCalculateService>();
 builder.Services.AddScoped<ICarbonEmissionService, CarbonEmissionService>();
+builder.Services.AddScoped<IMassEventService, MassEventService>();
 
 var app = builder.Build();
 
