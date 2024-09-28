@@ -5,7 +5,7 @@
       dockerfile: Dockerfile
     container_name: co2unter-app
     environment:
-      - ConnectionStrings__DefaultConnection="Host=${POSTGRES_HOST};Port=${POSTGRES_PORT};Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD};"
+      - ConnectionStrings__DefaultConnection=Host=${POSTGRES_HOST};Port=${POSTGRES_PORT};Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD};
       - CarbonEmissionSettings__ApiKey=${CARBON_EMISSION_APIKEY}
       - OpenWeatherMapSettings__ApiKey=${OPEN_WEATHER_MAP_APIKEY}
     ports:
