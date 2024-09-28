@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace co2unter.API.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class OpenWeatherMapController : ControllerBase
 {
     private static readonly HttpClient client = new();
@@ -13,7 +13,7 @@ public class OpenWeatherMapController : ControllerBase
     [HttpGet]
     public async Task<string> GetAsync()
     {
-        // Kraków's latitude and longitude
+        // Krakow's latitude and longitude
         string lat = "50.0647";
         string lon = "19.9450";
 
