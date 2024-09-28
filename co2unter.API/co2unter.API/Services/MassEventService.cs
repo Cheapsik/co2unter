@@ -25,7 +25,7 @@ namespace co2unter.API.Services
 
         public async Task<List<MassEvent>> GetAllMassEvents()
         {
-            return massEvents;
+            return massEvents.OrderBy(me => me.EventDate).ToList();
         }
 
         public async Task<Guid> AddMassEventAsync(MassEvent massEvent)
@@ -41,11 +41,11 @@ namespace co2unter.API.Services
             massEvents.AddRange(new List<MassEvent>()
             {
                 new MassEvent() { Id = Guid.NewGuid(), EventDate = DateTime.Now, Name = "XD1", EmmissionT = 100, Place = "Tama" },
-                new MassEvent() { Id = Guid.NewGuid(), EventDate = DateTime.Now, Name = "XD1_1", EmmissionT = 242, Place = "Bulwary" },
                 new MassEvent() { Id = Guid.NewGuid(), EventDate = DateTime.Now.AddDays(-2), Name = "XD2", EmmissionT = 10, Place = "Tauron Arena" },
                 new MassEvent() { Id = Guid.NewGuid(), EventDate = DateTime.Now.AddDays(-3), Name = "XD2_1", EmmissionT = 10, Place = "slumsy" },
+                new MassEvent() { Id = Guid.NewGuid(), EventDate = DateTime.Now, Name = "XD1_1", EmmissionT = 242, Place = "Bulwary" },
+                new MassEvent() { Id = Guid.NewGuid(), EventDate = DateTime.Now.AddYears(-1), Name = "XD3", EmmissionT = 20, Place = "Tama" },
                 new MassEvent() { Id = Guid.NewGuid(), EventDate = DateTime.Now.AddDays(-4), Name = "XD2_2", EmmissionT = 10, Place = "Stadion" },
-                new MassEvent() { Id = Guid.NewGuid(), EventDate = DateTime.Now.AddYears(-1), Name = "XD3", EmmissionT = 20, Place = "Tama" }
             });
         }
     }
