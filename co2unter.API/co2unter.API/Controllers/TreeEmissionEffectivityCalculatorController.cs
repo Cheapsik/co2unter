@@ -5,12 +5,12 @@ using Microsoft.AspNetCore.Mvc;
 namespace co2unter.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class TreeEmissionEffectivityCalculator : Controller
+    [Route("api/[controller]")]
+    public class TreeEmissionEffectivityCalculatorController : ControllerBase
     {
         private readonly ITreeEmissionEffectivityCalculateService _treeCalculatorService;
 
-        public TreeEmissionEffectivityCalculator(ITreeEmissionEffectivityCalculateService treeCalculatorService)
+        public TreeEmissionEffectivityCalculatorController(ITreeEmissionEffectivityCalculateService treeCalculatorService)
         {
             _treeCalculatorService = treeCalculatorService;
         }
