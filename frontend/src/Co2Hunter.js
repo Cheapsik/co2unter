@@ -1,37 +1,38 @@
 import React from 'react';
 import './main.scss';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import Section from './components/Section/Section'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Nav from './components/Nav';
+import Home from './pages/Home';
+import EmissionCalculator from './pages/EmissionCalculator';
 
 const Co2Hunter = () => {
   const sections = [
-    { title: 'Indywidualne działania mieszkańców', description: 'Indywidualne działania mieszkańców Indywidualne działania mieszkańców Indywidualne działania mieszkańców'},
-    { title: 'Transport', description: 'Transport Transport Transport'},
-    { title: 'Sektor usługowy', description: 'Sektor usługowy Sektor usługowy Sektor usługowy'},
-    { title: 'Wydarzenia', description: 'Wydarzenia Wydarzenia Wydarzenia'},
+    { title: 'Indywidualne działania mieszkańców', component: <EmissionCalculator />},
+    { title: 'Transport', component: <p>A</p>},
+    { title: 'Sektor usługowy', component: <p>B</p>},
+    { title: 'Wydarzenia', component: <p>C</p>},
   ]
+
+  const getUrl = (title) => {
+    const name = title.toLowerCase().replace(/ /g, '-')
+    return `/${name}`;
+  }
 
   return (
     <div className="App">
-      <Nav />
       <Router>
-          <div className="container">
-            {sections.map((section, idx) => (
-              <Link key={idx} to={`/${section.title}`} className="square">
-                {section.title}
-              </Link>
-            ))}
-          </div>
-          <Routes>
-            {sections.map((section, idx) => (
-              <Route
-                key={idx}
-                path={`/${section}`}
-                element={<Section name={section.title} description={section.description}/>}
-              />
-            ))}
-          </Routes>
+            <Nav />
+
+            <Routes>
+              <Route path="/" element={<Home />} />
+                {sections.map((section, idx) => (
+                  <Route
+                    key={idx}
+                    path={`/${getUrl(section.title)}`}
+                    element={section.component}
+                  />
+                ))}
+            </Routes>
         </Router>
     </div>
   );
