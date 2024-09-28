@@ -2,15 +2,14 @@ import React, { useEffect, useState } from 'react';
 import './MainEmission.scss';
 import EmissionList from '../../components/EmissionList/EmissionList';
 import { useNavigate } from 'react-router-dom';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 const MainEmission = () => {
     const [taskList, setTaskList] = useState([]);
-    const [totalCO2, setTotalCO2] = useState(0); 
+    const [totalCO2, setTotalCO2] = useState(0);
     const navigate = useNavigate();
-
-    const weeklyAllowance = 400;
-    const mostUsedMobility = 'Bicycle';
-    const savedCO2 = '10 cars off the road';
+    const monthlyLimit = 350;
 
     useEffect(() => {
         const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -19,7 +18,7 @@ const MainEmission = () => {
     }, []);
 
     const goTo = () => {
-        navigate('/kalkulator-emisji-co2');
+        navigate('/kalkulator-emisji-CO2');
     }
 
     const calculateTotalCO2 = (tasks) => {
@@ -30,7 +29,7 @@ const MainEmission = () => {
             } else if (task.transportType === 'public transport') {
                 transportEmissions = task.distance * 0.05;
             } else if (task.transportType === 'bike' || task.transportType === 'walking') {
-                transportEmissions = 0
+                transportEmissions = 0;
             }
 
             let dietEmissions = 0;
@@ -52,25 +51,29 @@ const MainEmission = () => {
 
         setTotalCO2(total.toFixed(2));
     };
-      
+
+    const progressPercentage = Math.min((totalCO2 / monthlyLimit) * 100, 100); // Procent dla paska postępu
+
     return (
         <div className="summary-container">
             <h1>Witaj,</h1>
             <h2>Oto podsumowanie twoich emisji</h2>
-            <div className="circle">
-                <div className="co2-value">{totalCO2}kg</div>
-                <div className="co2-text">CO₂</div>
-                <div className="subtext">So far this week</div>
+            
+            <div className="circle-progress">
+                <CircularProgressbar
+                    value={progressPercentage}
+                    text={`${totalCO2}kg CO²`}
+                    maxValue={100}
+                    styles={buildStyles({
+                        pathColor: '#16a085',
+                        trailColor: '#d6d6d6',
+                        strokeLinecap: 'round',
+                    })}
+                />
             </div>
-            <div className="info">
-                <div className="mobility">
-                    <span>🚲</span>
-                    <span>{mostUsedMobility}</span>
-                </div>
-                <div className="change">-7.6%</div>
-                <div className="weekly-allowance">{weeklyAllowance}kg Weekly allowance</div>
-            </div>
-            <button className="redirect-button" onClick={goTo}>Dodaj emisję CO2</button>
+
+            <button className="redirect-button" onClick={goTo}>Dodaj emisję  CO²</button>
+
             <div className="recent-journeys">
                 <h3>Ostatnie podróże</h3>
                 {taskList.length === 0 ? (
