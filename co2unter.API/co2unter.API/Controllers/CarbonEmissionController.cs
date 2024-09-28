@@ -1,4 +1,6 @@
-﻿using co2unter.API.Models;
+﻿using co2unter.API.Interfaces;
+using co2unter.API.Models;
+using co2unter.API.Services;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
@@ -14,10 +16,12 @@ public class CarbonEmissionController : ControllerBase
     private const string BaseUrl = "https://www.carboninterface.com/api/v1/";
 
     private readonly ILogger<CarbonEmissionController> _logger;
+    private readonly ICarbonEmissionService _carbonEmissionService;
 
-    public CarbonEmissionController(ILogger<CarbonEmissionController> logger)
+    public CarbonEmissionController(ILogger<CarbonEmissionController> logger, ICarbonEmissionService carbonEmissionService)
     {
         _logger = logger;
+        _carbonEmissionService = carbonEmissionService;
     }
 
     [HttpGet]
@@ -45,16 +49,6 @@ public class CarbonEmissionController : ControllerBase
     [HttpGet("actual")]
     public async Task<ActionResult<ActualCarbonEmissionResponse>> GetActualAsync()
     {
-        Random random = new Random();
-        int min = 0;
-        int max = 10_000;
-        int carbonEmissionG = random.Next(min, max);
-
-        return Ok(new ActualCarbonEmissionResponse()
-        {
-            DateTime = DateTime.Now,
-            CarbonEmissionG = carbonEmissionG,
-            CarbonEmissionKg = carbonEmissionG/1_000
-        });
+        return Ok(await _carbonEmissionService.GetActualAsync());
     }
 }
