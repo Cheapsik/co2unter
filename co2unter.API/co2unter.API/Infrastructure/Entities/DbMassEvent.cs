@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-namespace co2unter.API.Infrastructure.Entities
+﻿namespace co2unter.API.Infrastructure.Entities
 {
     public class DbMassEvent
     {
@@ -21,8 +19,6 @@ namespace co2unter.API.Infrastructure.Entities
 
         public DbMassEvent(string name, string place, DateTimeOffset eventDate, int EmmissionT)
             => new DbMassEvent(Guid.NewGuid(), name, place, eventDate, EmmissionT);
-
-
 
     }
 }
