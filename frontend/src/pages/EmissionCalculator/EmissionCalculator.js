@@ -4,7 +4,7 @@ import EmissionList from '../../components/EmissionList/EmissionList';
 
 const EmissionCalculator = () => {
   const [taskList, setTaskList] = useState(() => {
-        const storedTasks = JSON.parse(localStorage.getItem('tasks'));
+        const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
         return storedTasks || [];
     });
 

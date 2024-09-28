@@ -7,10 +7,14 @@ import EmissionCalculator from './pages/EmissionCalculator';
 import ServiceSector from './pages/ServiceSector';
 import EventSector from './pages/EventSector';
 import TransportSector from './pages/TransportSector';
+import EmissionConversion from './pages/EmissionConversion';
 
-const Co2Hunter = () => {
+const KrakCO2 = () => {
+
+
   const sections = [
     { title: 'Kalkulator emisji CO2', component: <EmissionCalculator />},
+    { title: 'Kalkulator absorbcji CO2 przez drzewa', component: <EmissionConversion />},
     { title: 'Sektor transporu', component: <TransportSector />},
     { title: 'Sektor usługowy', component: <ServiceSector />},
     { title: 'Sektor wydarzeń', component: <EventSector />},
@@ -40,4 +44,4 @@ const Co2Hunter = () => {
   );
 }
 
-export default Co2Hunter;
+export default KrakCO2;
