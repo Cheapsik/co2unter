@@ -1,5 +1,4 @@
 const DataSource = () => {
-    
     return (
         <div className="calculator">
            Data Source: 
