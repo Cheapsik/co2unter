@@ -4,6 +4,8 @@ using co2unter.API.Services;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
+using co2unter.API.Settings;
+using Microsoft.Extensions.Options;
 
 namespace co2unter.API.Controllers;
 
@@ -12,22 +14,26 @@ namespace co2unter.API.Controllers;
 public class CarbonEmissionController : ControllerBase
 {
     private static readonly HttpClient client = new();
-    private const string ApiKey = "m5EjrP1XFrnk5a97CBbLYg";
     private const string BaseUrl = "https://www.carboninterface.com/api/v1/";
+    private readonly string _apiKey;
 
     private readonly ILogger<CarbonEmissionController> _logger;
     private readonly ICarbonEmissionService _carbonEmissionService;
 
-    public CarbonEmissionController(ILogger<CarbonEmissionController> logger, ICarbonEmissionService carbonEmissionService)
+    public CarbonEmissionController(
+        ILogger<CarbonEmissionController> logger,
+        ICarbonEmissionService carbonEmissionService,
+        IOptions<CarbonEmissionSettings> options)
     {
         _logger = logger;
         _carbonEmissionService = carbonEmissionService;
+        _apiKey = options.Value.ApiKey;
     }
 
     [HttpGet]
     public async Task<ActionResult<string>> GetAsync()
     {
-        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", ApiKey);
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _apiKey);
 
         var requestBody = new
         {
