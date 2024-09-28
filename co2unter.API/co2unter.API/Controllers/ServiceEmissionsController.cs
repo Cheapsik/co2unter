@@ -1,4 +1,5 @@
-﻿using co2unter.API.Interfaces;
+﻿using co2unter.API.Infrastructure.Entities;
+using co2unter.API.Interfaces;
 using co2unter.API.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,35 +9,37 @@ namespace co2unter.API.Controllers;
 [Route("api/emissions/service")]
 public class ServiceEmissionsController : ControllerBase
 {
-    private readonly IServiceEmissionsService _serviceEmissionsService;
+    private readonly IServiceEmissionsRepository _serviceEmissionsRepository;
 
-    public ServiceEmissionsController(IServiceEmissionsService serviceEmissionsService)
+    public ServiceEmissionsController(IServiceEmissionsRepository serviceEmissionsService)
     {
-        _serviceEmissionsService = serviceEmissionsService;
+        _serviceEmissionsRepository = serviceEmissionsService;
     }
 
     [HttpGet]
-    public IActionResult GetAllServiceEmissions()
+    public async Task<ActionResult<ServiceEmissionModel>> GetAllServiceEmissions()
     {
-        List<ServiceEmissionModel> emissionsData = _serviceEmissionsService.GetAllEmissions();
-        return Ok(emissionsData);
+        IEnumerable<ServiceEmission> serviceEmissions = await _serviceEmissionsRepository.GetAllAsync();
+        List<ServiceEmissionModel> serviceEmissionModels = serviceEmissions.Select(x => x.Map()).ToList();
+        return Ok(serviceEmissionModels);
     }
 
     [HttpGet("year/{year}")]
-    public IActionResult GetServiceEmissionsByYear(int year)
+    public async Task<ActionResult<ServiceEmissionModel>> GetServiceEmissionsByYearAsync(int year)
     {
-        List<ServiceEmissionModel> emissionsData = _serviceEmissionsService.GetEmissionsByYear(year);
+        List<ServiceEmission> serviceEmissions = await _serviceEmissionsRepository.GetByYearAsync(year);
 
-        if (emissionsData.Count == 0)
+        if (serviceEmissions.Count == 0)
             return NotFound($"No emissions data found for year: {year}");
 
-        return Ok(emissionsData);
+        List<ServiceEmissionModel> serviceEmissionModels = serviceEmissions.Select(x => x.Map()).ToList();
+        return Ok(serviceEmissionModels);
     }
 
     [HttpGet("years")]
-    public IActionResult GetAvailableYears()
+    public async Task<ActionResult<int>> GetAvailableYearsAsync()
     {
-        List<int> availableYears = _serviceEmissionsService.GetAvailableYears();
+        List<int> availableYears = await _serviceEmissionsRepository.GetAvailableYearsAsync();
         return Ok(availableYears);
     }
 }

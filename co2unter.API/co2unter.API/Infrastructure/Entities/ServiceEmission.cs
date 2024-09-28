@@ -2,9 +2,9 @@
 
 public class ServiceEmission
 {
-    public string ServiceType { get; private set; } = default!;
-    public double TotalCO2EmissionsKg { get; private set; }
-    public int Year { get; private set; }
+    public string ServiceType { get; set; } = default!;
+    public double TotalCO2EmissionsKg { get; set; }
+    public int Year { get; set; }
 
     public ServiceEmission()
     {
