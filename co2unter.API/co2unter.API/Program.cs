@@ -1,5 +1,6 @@
 using co2unter.API;
 using co2unter.API.Interfaces;
+using co2unter.API.Repositories;
 using co2unter.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,8 +12,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<ITransportEmissionsService, TransportEmissionsService>();
-builder.Services.AddScoped<IServiceEmissionsService, ServiceEmissionsService>();
+builder.Services.AddScoped<ITransportEmissionsRepository, TransportEmissionsRepository>();
+builder.Services.AddScoped<IServiceEmissionsRepository, ServiceEmissionsRepository>();
 builder.Services.AddScoped<ITreeEmissionEffectivityCalculateService, TreeEmissionEffectivityCalculateService>();
 builder.Services.AddScoped<ICarbonEmissionService, CarbonEmissionService>();
 builder.Services.AddScoped<IMassEventService, MassEventService>();

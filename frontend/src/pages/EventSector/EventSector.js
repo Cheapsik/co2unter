@@ -22,13 +22,13 @@ const EventSector = () => {
 
   return (
     <div className="event-container">
-      <h1>Emisje CO2 związane z Wydarzeniami</h1>
+      <h1>Emisje  CO² związane z Wydarzeniami</h1>
 
       <section className="description">
-        <h2>Wydarzenia masowe a emisja CO2</h2>
+        <h2>Wydarzenia masowe a emisja  CO²</h2>
         <p>
           Organizacja wydarzeń masowych, zarówno stacjonarnych, jak i plenerowych, generuje znaczną
-          ilość emisji CO2. Wydarzenia takie jak koncerty, festiwale, targi czy konferencje wiążą
+          ilość emisji  CO². Wydarzenia takie jak koncerty, festiwale, targi czy konferencje wiążą
           się z transportem uczestników, użyciem energii do oświetlenia, nagłośnienia, a także
           produkcją odpadów. Każdy z tych elementów przyczynia się do wzrostu emisji gazów cieplarnianych.
         </p>
@@ -38,7 +38,7 @@ const EventSector = () => {
         {showDetails && (
           <div className="details">
             <p>
-              Na przykład, transport uczestników do miejsca wydarzenia generuje emisję CO2, szczególnie
+              Na przykład, transport uczestników do miejsca wydarzenia generuje emisję  CO², szczególnie
               jeśli dominują auta osobowe. Użycie publicznego transportu lub organizacja wspólnych dojazdów
               mogą znacznie zmniejszyć ten ślad węglowy. Dodatkowo, wydarzenia plenerowe często
               wymagają zastosowania dużej ilości jednorazowych opakowań oraz materiałów promocyjnych,

@@ -21,6 +21,8 @@ internal class Program
 
         ConsoleApp app = builder.Build();
 
+        app.AddCommands<co2unter.CLI.Console>();
+
         app.Run();
     }
 }
