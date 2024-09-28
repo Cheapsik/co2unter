@@ -56,7 +56,7 @@ const MainEmission = () => {
 
     return (
         <div className="summary-container">
-            <h1>Witaj,</h1>
+            <h1>Dzień dobry</h1>
             <h2>Oto podsumowanie twoich emisji</h2>
             
             <div className="circle-progress">
