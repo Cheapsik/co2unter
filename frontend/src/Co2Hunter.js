@@ -5,11 +5,12 @@ import Nav from './components/Nav';
 import Home from './pages/Home';
 import EmissionCalculator from './pages/EmissionCalculator';
 import ServiceSector from './pages/ServiceSector';
+import EventSector from './pages/EventSector';
 
 const Co2Hunter = () => {
   const sections = [
     { title: 'Indywidualne działania mieszkańców', component: <EmissionCalculator />},
-    { title: 'Transport', component: <p>A</p>},
+    { title: 'Transport', component: <EventSector />},
     { title: 'Sektor usługowy', component: <ServiceSector />},
     { title: 'Wydarzenia', component: <p>C</p>},
   ]
