@@ -19,12 +19,12 @@ namespace co2unter.API.Services
             return CalculateTreeEfectivityByPeroid(treeYearEfectivityAverage, calculatePeroidInHour);
         }
 
-        public Task<TimeSpan> CalculateTimeByWeight(TreeAgeEnum age, int co2Emission)
+        public async Task<TimeSpan> CalculateTimeByWeight(TreeAgeEnum age, int co2Emission)
         {
             (int, int) treeEfectivity = GetTreeEfectivityPerYear(age);
             int treeYearEfectivityAverage = GetAverage(treeEfectivity);
 
-            return CalculateTimeEmissionByWeight(treeYearEfectivityAverage, co2Emission);
+            return await CalculateTimeEmissionByWeight(treeYearEfectivityAverage, co2Emission);
         }
 
         //in grams
