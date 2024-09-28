@@ -13,6 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ITransportEmissionsService, TransportEmissionsService>();
 builder.Services.AddScoped<IServiceEmissionsService, ServiceEmissionsService>();
 builder.Services.AddScoped<ITreeEmissionEffectivityCalculateService, TreeEmissionEffectivityCalculateService>();
+builder.Services.AddScoped<ICarbonEmissionService, CarbonEmissionService>();
 
 var app = builder.Build();
 
