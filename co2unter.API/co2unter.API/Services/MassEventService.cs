@@ -15,7 +15,7 @@ namespace co2unter.API.Services
 
         public async Task<MassEvent?> GetMassEventByIdAsync(Guid massEventId)
         {
-            return massEvents.FirstOrDefault(me => me.Id == massEventId);
+            return massEvents.FirstOrDefault(me => me.Id.Value == massEventId);
         }
 
         public async Task<List<MassEvent>> BrowseMassEvents()
