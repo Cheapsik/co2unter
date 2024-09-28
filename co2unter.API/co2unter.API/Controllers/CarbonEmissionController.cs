@@ -1,6 +1,5 @@
 ﻿using co2unter.API.Interfaces;
 using co2unter.API.Models;
-using co2unter.API.Services;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
