@@ -11,6 +11,16 @@ services:
     networks:
       - app-network
 
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: co2unter-frontend
+    ports:
+      - "8081:80"
+    networks:
+      - app-network
+
   nginx:
     image: nginx:alpine
     container_name: co2unter-nginx
