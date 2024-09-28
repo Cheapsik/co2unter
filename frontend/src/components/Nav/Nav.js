@@ -7,7 +7,7 @@ const Nav = () => {
 
   return (
     <nav>
-      <button onClick={() => navigate('/')}>Home</button>
+      <button className="home-button" onClick={() => navigate('/')}>Strona główna</button>
     </nav>
   );
 }

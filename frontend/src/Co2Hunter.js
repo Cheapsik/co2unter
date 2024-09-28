@@ -10,10 +10,10 @@ import TransportSector from './pages/TransportSector';
 
 const Co2Hunter = () => {
   const sections = [
-    { title: 'Indywidualne działania mieszkańców', component: <EmissionCalculator />},
-    { title: 'Transport', component: <TransportSector />},
+    { title: 'Kalkulator emisji CO2', component: <EmissionCalculator />},
+    { title: 'Sektor transporu', component: <TransportSector />},
     { title: 'Sektor usługowy', component: <ServiceSector />},
-    { title: 'Wydarzenia', component: <EventSector />},
+    { title: 'Sektor wydarzeń', component: <EventSector />},
   ]
 
   const getUrl = (title) => {

@@ -2,9 +2,19 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: black;
-    height: 8rem;
+    border-bottom: 1px solid black;
+    height: 6rem;
     margin-bottom: 1.5rem;
     color: white;
     padding: 1.5rem;
+}
+
+.home-button {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
 }

@@ -8,7 +8,7 @@ const Home = () => {
         return `/${name}`;
       }
 
-    const urls = ['Indywidualne działania mieszkańców', 'Transport', 'Sektor usługowy', 'Wydarzenia']
+    const urls = ['Kalkulator emisji CO2', 'Sektor transporu', 'Sektor usługowy', 'Sektor wydarzeń']
     
     return (
         <div className="container">
