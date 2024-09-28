@@ -9,7 +9,8 @@ namespace co2unter.API.Services
 
         public MassEventService()
         {
-            MassEventsSeed();   
+            if(massEvents.Count == 0)
+                MassEventsSeed();   
         }
 
         public async Task<MassEvent?> GetMassEventByIdAsync(Guid massEventId)
