@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using co2unter.API.Interfaces;
+using co2unter.API.Models;
+using co2unter.API.Services;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
 
@@ -13,14 +16,16 @@ public class CarbonEmissionController : ControllerBase
     private const string BaseUrl = "https://www.carboninterface.com/api/v1/";
 
     private readonly ILogger<CarbonEmissionController> _logger;
+    private readonly ICarbonEmissionService _carbonEmissionService;
 
-    public CarbonEmissionController(ILogger<CarbonEmissionController> logger)
+    public CarbonEmissionController(ILogger<CarbonEmissionController> logger, ICarbonEmissionService carbonEmissionService)
     {
         _logger = logger;
+        _carbonEmissionService = carbonEmissionService;
     }
 
     [HttpGet]
-    public async Task<string> GetAsync()
+    public async Task<ActionResult<string>> GetAsync()
     {
         client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", ApiKey);
 
@@ -38,7 +43,12 @@ public class CarbonEmissionController : ControllerBase
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadAsStringAsync();
+        return Ok(await response.Content.ReadAsStringAsync());
+    }
 
+    [HttpGet("actual")]
+    public async Task<ActionResult<ActualCarbonEmissionResponse>> GetActualAsync()
+    {
+        return Ok(await _carbonEmissionService.GetActualAsync());
     }
 }
