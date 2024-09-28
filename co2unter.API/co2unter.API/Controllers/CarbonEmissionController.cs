@@ -8,7 +8,7 @@ namespace co2unter.API.Controllers;
 [Route("api/[controller]")]
 public class CarbonEmissionController : ControllerBase
 {
-    private static readonly HttpClient client = new HttpClient();
+    private static readonly HttpClient client = new();
     private const string ApiKey = "m5EjrP1XFrnk5a97CBbLYg";
     private const string BaseUrl = "https://www.carboninterface.com/api/v1/";
 
