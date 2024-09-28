@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using co2unter.API.Infrastructure;
@@ -11,9 +12,11 @@ using co2unter.API.Infrastructure;
 namespace co2unter.API.Migrations
 {
     [DbContext(typeof(Co2UnterDbContext))]
-    partial class Co2UnterDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240928233344_MassEvents")]
+    partial class MassEvents
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

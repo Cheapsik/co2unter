@@ -16,15 +16,15 @@ namespace co2unter.API.Controllers
         }
 
         [HttpGet("Calculate/Time/{treeAge}")]
-        public async Task<IActionResult> GetAsync(TreeAgeEnum treeAge, [FromQuery] int co2weight)
+        public IActionResult GetAsync(TreeAgeEnum treeAge, [FromQuery] int co2weight)
         {
-            return Ok(await _treeCalculatorService.CalculateTimeByWeight(treeAge, co2weight));
+            return Ok(_treeCalculatorService.CalculateTimeByWeight(treeAge, co2weight));
         }
 
         [HttpGet("Calculate/Co2Emission/{treeAge}")]
-        public async Task<IActionResult> GetAsync(TreeAgeEnum treeAge, [FromQuery] DateTimeOffset dateFrom, [FromQuery] DateTimeOffset dateTo)
+        public IActionResult GetAsync(TreeAgeEnum treeAge, [FromQuery] DateTimeOffset dateFrom, [FromQuery] DateTimeOffset dateTo)
         {
-            return Ok(await _treeCalculatorService.CalculateCo2EmissionByParoid(treeAge, dateFrom, dateTo));
+            return Ok(_treeCalculatorService.CalculateCo2EmissionByParoid(treeAge, dateFrom, dateTo));
         }
     }
 }
