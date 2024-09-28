@@ -39,16 +39,6 @@ const EventSector = () => {
           </div>
         )}
       </section>
-
-      <section className="other-sectors">
-        <h2>Możliwości redukcji emisji</h2>
-        <p>
-          Kluczowe dla organizatorów wydarzeń jest monitorowanie i analiza emisji związanych z każdym
-          etapem organizacji. Porównując różne typy wydarzeń oraz sposoby ich organizacji, można
-          zidentyfikować najbardziej efektywne metody redukcji emisji, co ma ogromne znaczenie w
-          kontekście zrównoważonego rozwoju i ochrony środowiska.
-        </p>
-      </section>
     </div>
   );
 };

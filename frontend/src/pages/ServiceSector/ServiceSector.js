@@ -39,15 +39,6 @@ const ServiceSector = () => {
           </div>
         )}
       </section>
-
-      <section className="other-sectors">
-        <h2>Inne sektory usługowe</h2>
-        <p>
-          Poza gastronomią, sektory takie jak hotelarstwo i handel również przyczyniają się do emisji CO2.
-          Codzienne działania, takie jak zakupy online, transport towarów oraz zużycie energii w sklepach
-          detalicznych mają swoje negatywne skutki dla środowiska.
-        </p>
-      </section>
     </div>
   );
 };
