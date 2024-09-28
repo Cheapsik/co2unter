@@ -3,9 +3,9 @@ using co2unter.API.Models;
 
 namespace co2unter.API.Interfaces
 {
-    public interface IServiceEmissionsRepository : IRepository<ServiceEmission>
+    public interface IServiceEmissionsRepository : IRepository<DbServiceEmission>
     {
-        Task<List<ServiceEmission>> GetByYearAsync(int year);
+        Task<List<DbServiceEmission>> GetByYearAsync(int year);
 
         Task<List<int>> GetAvailableYearsAsync();
     }

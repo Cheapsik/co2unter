@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace co2unter.API.Repositories;
 
-public class TransportEmissionsRepository : GenericRepository<TransportEmission>, ITransportEmissionsRepository
+public class TransportEmissionsRepository : GenericRepository<DbTransportEmission>, ITransportEmissionsRepository
 {
     private readonly Co2UnterDbContext _co2UnterDbContext;
 
@@ -15,7 +15,7 @@ public class TransportEmissionsRepository : GenericRepository<TransportEmission>
         _co2UnterDbContext = co2UnterDbContext;
     }
 
-    public async Task<List<TransportEmission>> GetByYearAsync(int year)
+    public async Task<List<DbTransportEmission>> GetByYearAsync(int year)
     {
         return await _co2UnterDbContext.TransportEmissions.Where(e => e.Year == year).ToListAsync();
     }

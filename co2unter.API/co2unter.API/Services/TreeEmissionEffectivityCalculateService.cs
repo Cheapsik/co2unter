@@ -10,7 +10,7 @@ namespace co2unter.API.Services
 
         }
 
-        public async Task<int> CalculateCo2EmissionByParoid(TreeAgeEnum age, DateTimeOffset dateFrom, DateTimeOffset dateTo)
+        public int CalculateCo2EmissionByParoid(TreeAgeEnum age, DateTimeOffset dateFrom, DateTimeOffset dateTo)
         {
             (int, int) treeEfectivity = GetTreeEfectivityPerYear(age);
             int treeYearEfectivityAverage = GetAverage(treeEfectivity);
@@ -19,12 +19,12 @@ namespace co2unter.API.Services
             return CalculateTreeEfectivityByPeroid(treeYearEfectivityAverage, calculatePeroidInHour);
         }
 
-        public async Task<TimeSpan> CalculateTimeByWeight(TreeAgeEnum age, int co2Emission)
+        public TimeSpan CalculateTimeByWeight(TreeAgeEnum age, int co2Emission)
         {
             (int, int) treeEfectivity = GetTreeEfectivityPerYear(age);
             int treeYearEfectivityAverage = GetAverage(treeEfectivity);
 
-            return await CalculateTimeEmissionByWeight(treeYearEfectivityAverage, co2Emission);
+            return CalculateTimeEmissionByWeight(treeYearEfectivityAverage, co2Emission);
         }
 
         //in grams
@@ -64,7 +64,7 @@ namespace co2unter.API.Services
             return (int)(GetEctivityPerHour(treeYearEfectivityAverage) * peroidInHour);
         }
 
-        private async Task<TimeSpan> CalculateTimeEmissionByWeight(int treeYearEfectivityAverage, int co2Emission)
+        private TimeSpan CalculateTimeEmissionByWeight(int treeYearEfectivityAverage, int co2Emission)
         {
             var timeInHours = co2Emission / GetEctivityPerHour(treeYearEfectivityAverage);
             return new TimeSpan(0, (int)timeInHours, 0, 0, 0, 0);

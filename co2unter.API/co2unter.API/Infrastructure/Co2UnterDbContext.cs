@@ -6,8 +6,9 @@ namespace co2unter.API.Infrastructure;
 
 public class Co2UnterDbContext : DbContext
 {
-    public DbSet<ServiceEmission> ServiceEmissions { get; set; }
-    public DbSet<TransportEmission> TransportEmissions { get; set; }
+    public DbSet<DbServiceEmission> ServiceEmissions { get; set; }
+    public DbSet<DbTransportEmission> TransportEmissions { get; set; }
+    public DbSet<DbMassEvent> MassEvents { get; set; }
 
     public Co2UnterDbContext() { }
 
@@ -19,7 +20,8 @@ public class Co2UnterDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.ApplyConfiguration(new ServiceEmissionEntityTypeConfiguration());
-        modelBuilder.ApplyConfiguration(new TransportEmissionEntityTypeConfiguration());
+        modelBuilder.ApplyConfiguration(new DbServiceEmissionEntityTypeConfiguration());
+        modelBuilder.ApplyConfiguration(new DbTransportEmissionEntityTypeConfiguration());
+        modelBuilder.ApplyConfiguration(new DbMassEventEntityTypeConfiguration());
     }
 }
