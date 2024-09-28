@@ -1,3 +1,4 @@
 ﻿.idea
 .vcs
 output
+.env
