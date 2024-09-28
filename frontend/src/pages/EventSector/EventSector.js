@@ -1,10 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './EventSector.scss';
+import EventList from '../../components/EventList';
 
 const EventSector = () => {
   const [showDetails, setShowDetails] = useState(false);
+  const [showEvents, setShowEvents] = useState(false);
+  const [eventData, setEventData] = useState([]);
 
   const toggleDetails = () => setShowDetails(!showDetails);
+  const toggleEvents = () => setShowEvents(!showEvents);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('https://localhost:7265/api/MassEvent/all');
+      const data = await response.json();
+      setEventData(data);
+    };
+    
+    fetchData();
+  }, []);
 
   return (
     <div className="event-container">
@@ -38,6 +52,18 @@ const EventSector = () => {
             </p>
           </div>
         )}
+      </section>
+      
+      <h1>Wydarzenia</h1>
+      <section className="description"> 
+            <button className="toggle-button" onClick={toggleEvents}>
+                {showEvents ? 'Ukryj wydarzenia' : 'Pokaż wydarzenia'}
+            </button>
+            {showEvents && (
+              <div>
+                <EventList eventList={eventData}></EventList>
+              </div>
+            )}
       </section>
     </div>
   );
