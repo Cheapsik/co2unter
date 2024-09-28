@@ -5,7 +5,7 @@ using System.Text;
 namespace co2unter.API.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class CarbonEmissionController : ControllerBase
 {
     private static readonly HttpClient client = new HttpClient();
