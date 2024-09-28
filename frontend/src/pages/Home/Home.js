@@ -12,7 +12,7 @@ const Home = () => {
     
     return (
         <div className="container">
-            {urls.map((url) => <Link to={parseUrl(url)} className="link">{url}</Link>)}
+            {urls.map((url) => <Link key={url} to={parseUrl(url)} className="link">{url}</Link>)}
         </div>
     );
 }

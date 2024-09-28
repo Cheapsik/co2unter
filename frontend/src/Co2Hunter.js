@@ -6,11 +6,12 @@ import Home from './pages/Home';
 import EmissionCalculator from './pages/EmissionCalculator';
 import ServiceSector from './pages/ServiceSector';
 import EventSector from './pages/EventSector';
+import TransportSector from './pages/TransportSector';
 
 const Co2Hunter = () => {
   const sections = [
     { title: 'Indywidualne działania mieszkańców', component: <EmissionCalculator />},
-    { title: 'Transport', component: <p>test</p>},
+    { title: 'Transport', component: <TransportSector />},
     { title: 'Sektor usługowy', component: <ServiceSector />},
     { title: 'Wydarzenia', component: <EventSector />},
   ]
