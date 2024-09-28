@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import DataSource from '../DataSource';
 
 
 const Home = () => {
@@ -13,6 +14,9 @@ const Home = () => {
     return (
         <div className="container">
             {urls.map((url) => <Link key={url} to={parseUrl(url)} className="link">{url}</Link>)}
+            <DataSource>
+
+            </DataSource>
         </div>
     );
 }
