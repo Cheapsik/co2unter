@@ -1,0 +1,6 @@
+@co2unter.API_HostAddress = http://localhost:5123
+
+GET {{co2unter.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
