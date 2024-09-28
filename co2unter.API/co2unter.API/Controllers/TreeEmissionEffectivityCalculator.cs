@@ -1,5 +1,5 @@
-﻿using co2unter.API.Models.Enums;
-using co2unter.API.Services;
+﻿using co2unter.API.Interfaces;
+using co2unter.API.Models.Enums;
 using Microsoft.AspNetCore.Mvc;
 
 namespace co2unter.API.Controllers

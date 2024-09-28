@@ -1,13 +1,8 @@
-﻿using co2unter.API.Models.Enums;
+﻿using co2unter.API.Interfaces;
+using co2unter.API.Models.Enums;
 
 namespace co2unter.API.Services
 {
-    public interface ITreeEmissionEffectivityCalculateService
-    {
-        public Task<int> CalculateCo2EmissionByParoid(TreeAgeEnum age, DateTimeOffset dateFrom, DateTimeOffset dateTo);
-        public Task<TimeSpan> CalculateTimeByWeight(TreeAgeEnum age, int co2Emission);
-    }
-
     public class TreeEmissionEffectivityCalculateService : ITreeEmissionEffectivityCalculateService
     {
         public TreeEmissionEffectivityCalculateService()
