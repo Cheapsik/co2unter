@@ -2,6 +2,7 @@ using co2unter.API;
 using co2unter.API.Interfaces;
 using co2unter.API.Repositories;
 using co2unter.API.Services;
+using co2unter.API.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,8 @@ builder.Services.AddScoped<ITreeEmissionEffectivityCalculateService, TreeEmissio
 builder.Services.AddScoped<ICarbonEmissionService, CarbonEmissionService>();
 
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.Configure<CarbonEmissionSettings>(builder.Configuration.GetSection("CarbonEmissionSettings"));
+builder.Services.Configure<OpenWeatherMapSettings>(builder.Configuration.GetSection("OpenWeatherMapSettings"));
 
 var app = builder.Build();
 

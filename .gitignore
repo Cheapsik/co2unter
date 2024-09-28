@@ -3,3 +3,4 @@
 output
 .env
 /co2unter.app/app/release
+/co2unter.API/appsettings.Development.json
