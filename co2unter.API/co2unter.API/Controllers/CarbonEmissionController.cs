@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using co2unter.API.Models;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
 
@@ -20,7 +21,7 @@ public class CarbonEmissionController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<string> GetAsync()
+    public async Task<ActionResult<string>> GetAsync()
     {
         client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", ApiKey);
 
@@ -38,7 +39,22 @@ public class CarbonEmissionController : ControllerBase
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadAsStringAsync();
+        return Ok(await response.Content.ReadAsStringAsync());
+    }
 
+    [HttpGet("actual")]
+    public async Task<ActionResult<ActualCarbonEmissionResponse>> GetActualAsync()
+    {
+        Random random = new Random();
+        int min = 0;
+        int max = 10_000;
+        int carbonEmissionG = random.Next(min, max)
+
+        return Ok(new ActualCarbonEmissionResponse()
+        {
+            DateTime = DateTime.Now,
+            CarbonEmissionG = random.Next(min, max),
+            CarbonEmissionKg = random.Next(min, max)
+        });
     }
 }
