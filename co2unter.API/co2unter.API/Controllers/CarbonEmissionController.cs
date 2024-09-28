@@ -48,13 +48,13 @@ public class CarbonEmissionController : ControllerBase
         Random random = new Random();
         int min = 0;
         int max = 10_000;
-        int carbonEmissionG = random.Next(min, max)
+        int carbonEmissionG = random.Next(min, max);
 
         return Ok(new ActualCarbonEmissionResponse()
         {
             DateTime = DateTime.Now,
-            CarbonEmissionG = random.Next(min, max),
-            CarbonEmissionKg = random.Next(min, max)
+            CarbonEmissionG = carbonEmissionG,
+            CarbonEmissionKg = carbonEmissionG/1_000
         });
     }
 }
