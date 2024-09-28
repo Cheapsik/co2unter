@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         webView = findViewById(R.id.webView);
         webView.setWebViewClient(new WebViewClient());
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl("https://co2unter.redtm.pl");
+        webView.loadUrl("https://krakco2.pl");
 
         OnBackPressedCallback callback = new OnBackPressedCallback(true) {
             @Override
