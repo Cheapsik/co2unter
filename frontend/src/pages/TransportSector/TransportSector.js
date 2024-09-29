@@ -53,6 +53,7 @@ const TransportSector = () => {
                CO₂ na dystansie 1200 km. Warto zauważyć, że jazda na rowerze i chodzenie nie generują
               żadnych emisji  CO₂, co czyni je najlepszymi wyborami ekologicznymi.
             </p>
+            <br />
             <p>
               Ruch rowerowy oraz pieszy są najlepszymi opcjami dla środowiska, ponieważ
               nie generują emisji  CO₂. Zachęcanie do korzystania z tych form transportu

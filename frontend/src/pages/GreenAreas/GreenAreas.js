@@ -13,7 +13,7 @@ const GreenAreas = () => {
   
     useEffect(() => {
       const fetchData = async () => {
-        const response = await fetch(`${process.env.REACT_APP_API_URL??'https://krakco2.pl/api/'}GreenArea`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL ?? 'https://krakco2.pl/api/'}GreenArea`);
         const data = await response.json();
         setGreenAreas(data);
       };
