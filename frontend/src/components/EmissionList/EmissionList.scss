@@ -1,7 +1,7 @@
 .task-list {
     list-style: none;
     padding: 0;
-    border-radius: 8px;
+    border-radius: .8rem;
     overflow: hidden;
 
   .task-item {
@@ -32,7 +32,7 @@
     padding: 10px 15px;
     font-size: 0.9em;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: .8rem
   }
   
   .toggle-button:hover {
@@ -46,7 +46,7 @@
     padding: 10px 15px;
     font-size: 1em;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: .8rem;
     margin-left: 10px;
   }
   
