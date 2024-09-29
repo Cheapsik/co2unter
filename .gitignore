@@ -5,3 +5,5 @@ output
 /co2unter.app/app/release
 /co2unter.API/co2unter.API/appsettings.Development.json
 /co2unter.API/co2unter.CLI/appsettings.Development.json
+/reverseProxy/ssl/ssl.crt
+/reverseProxy/ssl/ssl.key
