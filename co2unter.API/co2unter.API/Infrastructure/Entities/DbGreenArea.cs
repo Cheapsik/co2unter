@@ -3,7 +3,7 @@
     public class DbGreenArea
     {
         public Guid Id { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; } = default!;
         public double Area { get; set; }
         public double Co2Absorption { get; set; }
 

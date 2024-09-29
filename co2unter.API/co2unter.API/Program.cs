@@ -16,7 +16,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ITransportEmissionsRepository, TransportEmissionsRepository>();
 builder.Services.AddScoped<IServiceEmissionsRepository, ServiceEmissionsRepository>();
 builder.Services.AddScoped<ITreeEmissionEffectivityCalculateService, TreeEmissionEffectivityCalculateService>();
-builder.Services.AddScoped<ICarbonEmissionService, CarbonEmissionService>();
 builder.Services.AddScoped<IMassEventRepository, MassEventRepository>();
 builder.Services.AddScoped<IGreenAreaRepository, GreenAreaRepository>();
 
