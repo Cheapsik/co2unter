@@ -1,5 +1,4 @@
-﻿using System.Xml.Linq;
-using co2unter.API.Infrastructure.Entities;
+﻿using co2unter.API.Infrastructure.Entities;
 
 namespace co2unter.CLI;
 
@@ -7,111 +6,37 @@ public static class SeedData
 {
     public static List<DbServiceEmission> ServiceEmissions = new()
     {
-        new DbServiceEmission
-        {
-            ServiceType = "gastronomy",
-            TotalCO2EmissionsKg = 150.0,
-            Year = 2024
-        },
-        new DbServiceEmission
-        {
-            ServiceType = "hospitality",
-            TotalCO2EmissionsKg = 200.0,
-            Year = 2024
-        },
-        new DbServiceEmission
-        {
-            ServiceType = "trade",
-            TotalCO2EmissionsKg = 180.0,
-            Year = 2024
-        },
-        new DbServiceEmission
-        {
-            ServiceType = "gastronomy",
-            TotalCO2EmissionsKg = 140.0,
-            Year = 2023
-        },
-        new DbServiceEmission
-        {
-            ServiceType = "hospitality",
-            TotalCO2EmissionsKg = 210.0,
-            Year = 2023
-        },
-        new DbServiceEmission
-        {
-            ServiceType = "trade",
-            TotalCO2EmissionsKg = 175.0,
-            Year = 2023
-        }
+        new DbServiceEmission { ServiceType = "gastronomy", TotalCO2EmissionsKg = 15000, Year = 2023 },
+        new DbServiceEmission { ServiceType = "gastronomy", TotalCO2EmissionsKg = 16000, Year = 2024 },
+        new DbServiceEmission { ServiceType = "hospitality", TotalCO2EmissionsKg = 10000, Year = 2023 },
+        new DbServiceEmission { ServiceType = "hospitality", TotalCO2EmissionsKg = 11000, Year = 2024 },
+        new DbServiceEmission { ServiceType = "trade", TotalCO2EmissionsKg = 8000, Year = 2023 },
+        new DbServiceEmission { ServiceType = "trade", TotalCO2EmissionsKg = 8500, Year = 2024 },
+        new DbServiceEmission { ServiceType = "health services", TotalCO2EmissionsKg = 5000, Year = 2023 },
+        new DbServiceEmission { ServiceType = "health services", TotalCO2EmissionsKg = 5200, Year = 2024 },
     };
 
     public static List<DbTransportEmission> TransportEmissions = new()
     {
-        new DbTransportEmission
-        {
-            TransportType = "car",
-            TotalCO2EmissionsKg = 250.0,
-            TotalDistanceKm = 1500.0,
-            Year = 2024
-        },
-        new DbTransportEmission
-        {
-            TransportType = "car",
-            TotalCO2EmissionsKg = 220.0,
-            TotalDistanceKm = 1400.0,
-            Year = 2023
-        },
-        new DbTransportEmission
-        {
-            TransportType = "public transport",
-            TotalCO2EmissionsKg = 75.0,
-            TotalDistanceKm = 1200.0,
-            Year = 2024
-        },
-        new DbTransportEmission
-        {
-            TransportType = "public transport",
-            TotalCO2EmissionsKg = 80.0,
-            TotalDistanceKm = 1300.0,
-            Year = 2023
-        },
-        new DbTransportEmission
-        {
-            TransportType = "bike",
-            TotalCO2EmissionsKg = 0.0,
-            TotalDistanceKm = 500.0,
-            Year = 2024
-        },
-        new DbTransportEmission
-        {
-            TransportType = "bike",
-            TotalCO2EmissionsKg = 0.0,
-            TotalDistanceKm = 400.0,
-            Year = 2023
-        },
-        new DbTransportEmission
-        {
-            TransportType = "walking",
-            TotalCO2EmissionsKg = 0.0,
-            TotalDistanceKm = 300.0,
-            Year = 2024
-        },
-        new DbTransportEmission
-        {
-            TransportType = "walking",
-            TotalCO2EmissionsKg = 0.0,
-            TotalDistanceKm = 250.0,
-            Year = 2023
-        }
+        new DbTransportEmission { TransportType = "car", TotalCO2EmissionsKg = 12000, TotalDistanceKm = 300, Year = 2023 },
+        new DbTransportEmission { TransportType = "car", TotalCO2EmissionsKg = 12500, TotalDistanceKm = 320, Year = 2024 },
+        new DbTransportEmission { TransportType = "public transport", TotalCO2EmissionsKg = 7000, TotalDistanceKm = 500, Year = 2023 },
+        new DbTransportEmission { TransportType = "public transport", TotalCO2EmissionsKg = 7200, TotalDistanceKm = 520, Year = 2024 },
+        new DbTransportEmission { TransportType = "bike", TotalCO2EmissionsKg = 500, TotalDistanceKm = 100, Year = 2023 },
+        new DbTransportEmission { TransportType = "bike", TotalCO2EmissionsKg = 550, TotalDistanceKm = 110, Year = 2024 },
+        new DbTransportEmission { TransportType = "walking", TotalCO2EmissionsKg = 100, TotalDistanceKm = 50, Year = 2023 },
+        new DbTransportEmission { TransportType = "walking", TotalCO2EmissionsKg = 120, TotalDistanceKm = 60, Year = 2024 },
     };
 
     public static List<DbMassEvent> MassEvents = new()
     {
-        new DbMassEvent() { Id = Guid.NewGuid(), EventDate = DateTime.Now, Name = "XD1", EmmissionT = 100, Place = "Tama" },
-        new DbMassEvent() { Id = Guid.NewGuid(), EventDate = DateTime.Now.AddDays(-2), Name = "XD2", EmmissionT = 10, Place = "Tauron Arena" },
-        new DbMassEvent() { Id = Guid.NewGuid(), EventDate = DateTime.Now.AddDays(-3), Name = "XD2_1", EmmissionT = 10, Place = "slumsy" },
-        new DbMassEvent() { Id = Guid.NewGuid(), EventDate = DateTime.Now, Name = "XD1_1", EmmissionT = 242, Place = "Bulwary" },
-        new DbMassEvent() { Id = Guid.NewGuid(), EventDate = DateTime.Now.AddYears(-1), Name = "XD3", EmmissionT = 20, Place = "Tama" },
-        new DbMassEvent() { Id = Guid.NewGuid(), EventDate = DateTime.Now.AddDays(-4), Name = "XD2_2", EmmissionT = 10, Place = "Stadion" },
+        new DbMassEvent { Id = Guid.NewGuid(), Name = "Kraków Music Festival", Place = "Stadion Miejski", EventDate = new DateTimeOffset(new DateTime(2023, 8, 12)), EmmissionT = 5 },
+        new DbMassEvent { Id = Guid.NewGuid(), Name = "Kraków Music Festival", Place = "Stadion Miejski", EventDate = new DateTimeOffset(new DateTime(2024, 8, 10)), EmmissionT = 5 },
+        new DbMassEvent { Id = Guid.NewGuid(), Name = "Kraków Christmas Market", Place = "Rynek Główny", EventDate = new DateTimeOffset(new DateTime(2023, 12, 1)), EmmissionT = 3 },
+        new DbMassEvent { Id = Guid.NewGuid(), Name = "Kraków Christmas Market", Place = "Rynek Główny", EventDate = new DateTimeOffset(new DateTime(2024, 12, 1)), EmmissionT = 3 },
+        new DbMassEvent { Id = Guid.NewGuid(), Name = "Kraków Food Festival", Place = "Park Jordana", EventDate = new DateTimeOffset(new DateTime(2023, 6, 20)), EmmissionT = 2 },
+        new DbMassEvent { Id = Guid.NewGuid(), Name = "Kraków Food Festival", Place = "Park Jordana", EventDate = new DateTimeOffset(new DateTime(2024, 6, 15)), EmmissionT = 2 },
+        new DbMassEvent { Id = Guid.NewGuid(), Name = "Kraków Film Festival", Place = "Centrum Kongresowe", EventDate = new DateTimeOffset(new DateTime(2023, 11, 5)), EmmissionT = 4 },
+        new DbMassEvent { Id = Guid.NewGuid(), Name = "Kraków Film Festival", Place = "Centrum Kongresowe", EventDate = new DateTimeOffset(new DateTime(2024, 11, 3)), EmmissionT = 5 }, 
     };
 }
