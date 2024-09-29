@@ -31,7 +31,7 @@ mv docker-compose-deploy.yml docker-compose.yml  # Rename the docker-compose fil
 docker load -i co2unter-app-latest.tar
 docker load -i co2unter-frontend-latest.tar
 rm *.tar
-docker compose up -d
+docker compose up -d --build
 "@
 
 # Execute the SSH command
