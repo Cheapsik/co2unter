@@ -1,61 +1,61 @@
 .calculator-container {
-    height: 100%;
-    margin: 0 auto;
-  
+  height: 100%;
+  margin: 0 auto;
+
   h1 {
-    font-size: 2em;
-    margin: 40px 0 30px 10px;
+      font-size: 2rem;
+      margin: 4rem 0 3rem 1rem;
   }
-  
+
   h2 {
-    margin-left: 1rem;
+      margin-left: 1rem;
   }
-  
+
   .calculator-form {
-    background-color: #f9f9f9;
-    padding: 20px 10px;
-    border-radius: 22px 22px 0 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #f9f9f9;
+      padding: 2rem 1rem;
+      border-radius: 2.2rem 2.2rem 0 0;
+      box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
   }
 
   .emission-list-container {
-    background-color: white;
+      background-color: white;
 
-    h2 {
-      background-color: #f9f9f9;
-    }
+      h2 {
+          background-color: #f9f9f9;
+      }
   }
-  
+
   .form-group {
-    margin-bottom: 15px;
+      margin-bottom: 1.5rem;
   }
-  
+
   label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #34495e;
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #34495e;
   }
-  
+
   input,
   select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #e1e1e1;
-    border-radius: 5px;
+      width: 100%;
+      padding: 1rem;
+      border: 0.1rem solid #4caf50;
+      border-radius: 0.5rem;
   }
-  
+
   .submit-button {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 0.5rem;
   }
-  
+
   .submit-button:hover {
-    background-color: #4caf50;
+      background-color: #4caf50;
   }
 }

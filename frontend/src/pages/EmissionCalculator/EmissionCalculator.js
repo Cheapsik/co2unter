@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import './EmissionCalculator.scss';
 import EmissionList from '../../components/EmissionList/EmissionList';
 import { format } from 'date-fns';
+import './EmissionCalculator.scss';
 
 const EmissionCalculator = () => {
   const [taskList, setTaskList] = useState(() => {
