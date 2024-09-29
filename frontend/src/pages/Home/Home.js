@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import MainEmission from '../MainEmission';
 import './Home.scss';
+import DataSource from '../DataSource';
+
 
 const Home = () => {
     const parseUrl = (url) => {
@@ -16,6 +18,7 @@ const Home = () => {
             <div className="container">
                 {urls.map((url) => <Link key={url} to={parseUrl(url)} className="link">{url}</Link>)}
             </div>
+            <DataSource/>
         </>
     );
 }

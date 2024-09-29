@@ -1,5 +1,6 @@
 ﻿using co2unter.API.Infrastructure.Entities;
 using co2unter.API.Models;
+using System.Xml.Linq;
 
 namespace co2unter.API;
 
@@ -35,6 +36,17 @@ public static class MappingExtensions
             EventDate = massEvent.EventDate,
             Name = massEvent.Name,
             Place = massEvent.Place,
+        };
+    }
+
+    public static GreenArea Map(this DbGreenArea dbGreenArea)
+    {
+        return new GreenArea
+        {
+            Id = dbGreenArea.Id,
+            Name = dbGreenArea.Name,
+            Area = dbGreenArea.Area,
+            Co2Absorption = dbGreenArea.Co2Absorption
         };
     }
 }

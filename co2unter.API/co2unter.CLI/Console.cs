@@ -33,6 +33,10 @@ public class Console : ConsoleAppBase
         _dbContext.RemoveRange(massEvents);
         await _dbContext.AddRangeAsync(SeedData.MassEvents);
 
+        List<DbGreenArea> greenAreas = await _dbContext.GreenAreas.ToListAsync();
+        _dbContext.RemoveRange(greenAreas);
+        await _dbContext.AddRangeAsync(SeedData.GreenAreas);
+
         await _dbContext.SaveChangesAsync();
     }
 }

@@ -6,7 +6,7 @@
     }
   },
   "ConnectionStrings": {
-    "DefaultConnection": "Host=postgres;Port=5432;Database=co2unter;Username=postgres;Password=postgres;"
+    "DefaultConnection": "Host=localhost:5432;Port=5432;Database=co2unter;Username=postgres;Password=postgres;"
   },
   "CarbonEmissionSettings": {
     "ApiKey": "secret"
