@@ -2,5 +2,5 @@
 
 public class CarbonEmissionSettings
 {
-    public string ApiKey { get; set; }
+    public string ApiKey { get; set; } = default!;
 }

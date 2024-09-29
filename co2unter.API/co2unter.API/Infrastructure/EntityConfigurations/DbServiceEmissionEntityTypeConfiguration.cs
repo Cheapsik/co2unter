@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace co2unter.API.Infrastructure.EntityConfigurations;
 
-public class ServiceEmissionEntityTypeConfiguration : IEntityTypeConfiguration<ServiceEmission>
+public class DbServiceEmissionEntityTypeConfiguration : IEntityTypeConfiguration<DbServiceEmission>
 {
-    public void Configure(EntityTypeBuilder<ServiceEmission> builder)
+    public void Configure(EntityTypeBuilder<DbServiceEmission> builder)
     {
         builder.HasKey(serviceEmission => new { serviceEmission.ServiceType, serviceEmission.Year });
     }

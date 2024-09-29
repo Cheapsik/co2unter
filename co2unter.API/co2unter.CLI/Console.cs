@@ -21,13 +21,17 @@ public class Console : ConsoleAppBase
     [Command("seed-all")]
     public async Task SeedAll()
     {
-        List<ServiceEmission> serviceEmissions = await _dbContext.ServiceEmissions.ToListAsync();
+        List<DbServiceEmission> serviceEmissions = await _dbContext.ServiceEmissions.ToListAsync();
         _dbContext.RemoveRange(serviceEmissions);
         await _dbContext.AddRangeAsync(SeedData.ServiceEmissions);
 
-        List<TransportEmission> transportEmissions = await _dbContext.TransportEmissions.ToListAsync();
+        List<DbTransportEmission> transportEmissions = await _dbContext.TransportEmissions.ToListAsync();
         _dbContext.RemoveRange(transportEmissions);
         await _dbContext.AddRangeAsync(SeedData.TransportEmissions);
+
+        List<DbMassEvent> massEvents = await _dbContext.MassEvents.ToListAsync();
+        _dbContext.RemoveRange(massEvents);
+        await _dbContext.AddRangeAsync(SeedData.MassEvents);
 
         await _dbContext.SaveChangesAsync();
     }

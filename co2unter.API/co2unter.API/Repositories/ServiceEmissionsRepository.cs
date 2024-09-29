@@ -1,12 +1,11 @@
 ﻿using co2unter.API.Infrastructure;
 using co2unter.API.Infrastructure.Entities;
 using co2unter.API.Interfaces;
-using co2unter.API.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace co2unter.API.Repositories;
 
-public class ServiceEmissionsRepository : GenericRepository<ServiceEmission>, IServiceEmissionsRepository
+public class ServiceEmissionsRepository : GenericRepository<DbServiceEmission>, IServiceEmissionsRepository
 {
     private readonly Co2UnterDbContext _co2UnterDbContext;
 
@@ -15,7 +14,7 @@ public class ServiceEmissionsRepository : GenericRepository<ServiceEmission>, IS
         _co2UnterDbContext = co2UnterDbContext;
     }
 
-    public async Task<List<ServiceEmission>> GetByYearAsync(int year)
+    public async Task<List<DbServiceEmission>> GetByYearAsync(int year)
     {
         return await _co2UnterDbContext.ServiceEmissions.Where(e => e.Year == year).ToListAsync();
     }

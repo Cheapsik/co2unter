@@ -1,4 +1,5 @@
-﻿using co2unter.API.Interfaces;
+﻿using co2unter.API.Infrastructure.Entities;
+using co2unter.API.Interfaces;
 using co2unter.API.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,33 +9,30 @@ namespace co2unter.API.Controllers
     [Route("api/[controller]")]
     public class MassEventController : Controller
     {
-        private readonly IMassEventService _massEventService;
+        private readonly IMassEventRepository _massEventRepository;
 
-        public MassEventController(IMassEventService massEventService)
+        public MassEventController(IMassEventRepository massEventService)
         {
-            _massEventService = massEventService;
+            _massEventRepository = massEventService;
         }
 
         [HttpGet("all")]
-        public async Task<ActionResult<MassEvent>> GetAllAsync()
+        public async Task<ActionResult<MassEventModel>> GetAllAsync()
         {
-            return Ok(await _massEventService.GetAllMassEvents());
+            IEnumerable<DbMassEvent> massEvents = await _massEventRepository.GetAllAsync();
+            List<MassEventModel> massEventModels = massEvents.Select(x => x.Map()).ToList();
+            return Ok(massEventModels);
         }
 
         [HttpGet("{massEventId}")]
-        public async Task<ActionResult<MassEvent>> GetByIdAsync(Guid massEventId)
+        public async Task<ActionResult<MassEventModel>> GetByIdAsync(Guid massEventId)
         {
-            MassEvent? massEvent = await _massEventService.GetMassEventByIdAsync(massEventId);
+            DbMassEvent? massEvent = await _massEventRepository.GetMassEventByIdAsync(massEventId);
             if (massEvent is null)
                 return NotFound();
 
-            return Ok(massEvent);
-        }
-
-        [HttpPost]
-        public async Task<ActionResult<Guid>> PostAsync([FromBody] MassEvent massEvent)
-        {
-            return Created("/", await _massEventService.AddMassEventAsync(massEvent));
+            MassEventModel massEventModel = massEvent.Map();
+            return Ok(massEventModel);
         }
     }
 }

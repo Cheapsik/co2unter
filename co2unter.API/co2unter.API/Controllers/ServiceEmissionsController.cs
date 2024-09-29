@@ -19,7 +19,7 @@ public class ServiceEmissionsController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<ServiceEmissionModel>> GetAllServiceEmissions()
     {
-        IEnumerable<ServiceEmission> serviceEmissions = await _serviceEmissionsRepository.GetAllAsync();
+        IEnumerable<DbServiceEmission> serviceEmissions = await _serviceEmissionsRepository.GetAllAsync();
         List<ServiceEmissionModel> serviceEmissionModels = serviceEmissions.Select(x => x.Map()).ToList();
         return Ok(serviceEmissionModels);
     }
@@ -27,7 +27,7 @@ public class ServiceEmissionsController : ControllerBase
     [HttpGet("year/{year}")]
     public async Task<ActionResult<ServiceEmissionModel>> GetServiceEmissionsByYearAsync(int year)
     {
-        List<ServiceEmission> serviceEmissions = await _serviceEmissionsRepository.GetByYearAsync(year);
+        List<DbServiceEmission> serviceEmissions = await _serviceEmissionsRepository.GetByYearAsync(year);
 
         if (serviceEmissions.Count == 0)
             return NotFound($"No emissions data found for year: {year}");
