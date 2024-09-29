@@ -1,6 +1,5 @@
-import React from 'react';
-import './main.scss';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React from 'react';
 import Nav from './components/Nav';
 import Home from './pages/Home';
 import EmissionCalculator from './pages/EmissionCalculator';
@@ -9,10 +8,9 @@ import EventSector from './pages/EventSector';
 import TransportSector from './pages/TransportSector';
 import EmissionConversion from './pages/EmissionConversion';
 import GreenAreas from './pages/GreenAreas';
+import './main.scss';
 
 const KrakCO2 = () => {
-
-
   const sections = [
     { title: 'Kalkulator emisji CO₂', component: <EmissionCalculator />},
     { title: 'Kalkulator absorpcji CO₂ przez drzewa', component: <EmissionConversion />},
