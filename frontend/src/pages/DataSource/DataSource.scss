@@ -1,15 +1,22 @@
 .data-source{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
     color: white;
-    margin: 1rem;
+    padding: 1rem;
+    height: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
 
     a {
         margin-left: 1rem;
+        color:rgba(199, 199, 199, 0.5);
     }
 
     .special-section {
-        float: right;
+
         a{
-            color: rgb(0, 0, 0, 0)
+            color: rgba(0, 0, 0, 0);
         }
     }
 }
