@@ -20,7 +20,7 @@ const EventSector = () => {
 
   return (
     <div className="event-container">
-      <h1>Emisje  CO₂ związane z Wydarzeniami</h1>
+      <h1>Emisje  CO₂ związane z wydarzeniami</h1>
 
       <section className="description">
         <h2>Wydarzenia masowe a emisja  CO₂</h2>

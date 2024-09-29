@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './EmissionConversion.scss'; // Upewnij się, że masz odpowiednie style
+import './EmissionConversion.scss';
 
 const EmissionConversion = () => {
     const [treeType, setTreeType] = useState('');
@@ -54,7 +54,7 @@ const EmissionConversion = () => {
                         <option value="1">Mała sadzonka</option>
                     </select>
 
-                    <label htmlFor="co2-amount">Ilość CO2 (w gramach):</label>
+                    <label htmlFor="co2-amount">Ilość CO₂ (w gramach):</label>
                     <input
                         type="number"
                         id="co2-amount"

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './EmissionList.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 const EmissionList = ({ taskList }) => {
     const [tasks, setTasks] = useState([]);
-
 
     useEffect(() => {
         setTasks(taskList);
@@ -22,6 +23,21 @@ const EmissionList = ({ taskList }) => {
         setTasks(updatedTasks);
     };
 
+    const getActivityType = (task) => {
+        switch(task.activityType){
+            case 'diet':
+                return 'Konsumpcjonizm';
+            case 'privateTransport':
+                return 'Transport prywatny';
+            case 'waterConsumption':
+                return 'Zużycie wody';
+            case 'internetConsumption':
+                return 'Korzystanie z internetu';
+            default:
+                return '-'
+        }
+    }
+
     const removeTask = (id) => {
         const updatedTasks = tasks.filter((task) => task.id !== id);
         setTasks(updatedTasks);
@@ -33,21 +49,21 @@ const EmissionList = ({ taskList }) => {
             {tasks.map((task) => (
                 <li key={task.id} className="task-item">
                     <div className="task-summary">
-                        <span>{`${task.name} - ${task.distance} km`}</span>
+                        <span>{`${task.name}`}</span>
                         <div className="action-buttons">
                             <button onClick={() => toggleDetails(task.id)} className="toggle-button">
                                 {task.detailsVisible ? 'Ukryj szczegóły' : 'Pokaż więcej'}
                             </button>
-                            <button onClick={() => removeTask(task.id)} className="remove-button">Usuń</button>
+                            <button onClick={() => removeTask(task.id)} className="remove-button">
+                                Usuń <FontAwesomeIcon icon={faTrashCan} />
+                                </button>
                         </div>
                     </div>
                     {task.detailsVisible && (
                         <div className="task-details">
-                            <p>Emisje  CO₂ z transportu: {task.emissions.transportEmissions} kg</p>
-                            <p>Emisje  CO₂ z diety: {task.emissions.dietEmissions} kg</p>
-                            <p>Emisje  CO₂ z zużycia wody: {task.emissions.waterEmissions} kg</p>
-                            <p>Emisje  CO₂ z odpadów: {task.emissions.wasteEmissions} kg</p>
-                            <p><strong>Łączne emisje  CO₂: {task.emissions.totalEmissions} kg</strong></p>
+                            <p>Rodzaj aktywności: <strong>{getActivityType(task)}</strong></p>
+                            <p>Data utworzenia: <strong>{task.creationDate}</strong></p>
+                            <p>Łączne emisje  CO₂: <strong>{task.emissions.totalEmissions} kg</strong></p>
                         </div>
                     )}
                 </li>

@@ -18,41 +18,15 @@ const MainEmission = () => {
     }, []);
 
     const goTo = () => {
-        navigate('/kalkulator-emisji-CO2');
+        navigate('/kalkulator-emisji-CO₂');
     }
 
     const calculateTotalCO2 = (tasks) => {
-        const total = tasks.reduce((acc, task) => {
-            let transportEmissions = 0;
-            if (task.transportType === 'car') {
-                transportEmissions = task.distance * 0.2;
-            } else if (task.transportType === 'public transport') {
-                transportEmissions = task.distance * 0.05;
-            } else if (task.transportType === 'bike' || task.transportType === 'walking') {
-                transportEmissions = 0;
-            }
-
-            let dietEmissions = 0;
-            if (task.dietType === 'meat') {
-                dietEmissions = 2.5;
-            } else if (task.dietType === 'vegetarian') {
-                dietEmissions = 1.5;
-            } else if (task.dietType === 'vegan') {
-                dietEmissions = 1;
-            } else if (task.dietType === 'mediterranean') {
-                dietEmissions = 1.2;
-            }
-
-            const waterEmissions = task.waterUsage * 0.02;
-            const wasteEmissions = task.waste * 0.5;
-
-            return acc + transportEmissions + dietEmissions + waterEmissions + wasteEmissions;
-        }, 0);
-
-        setTotalCO2(total.toFixed(2));
+        const co2 = tasks.reduce((acc, task) => acc + Number(task.emissions.totalEmissions), 0);
+        setTotalCO2(co2);
     };
 
-    const progressPercentage = Math.min((totalCO2 / monthlyLimit) * 100, 100); // Procent dla paska postępu
+    const progressPercentage = Math.min((totalCO2 / monthlyLimit) * 100, 100);
 
     return (
         <div className="summary-container">
@@ -62,7 +36,7 @@ const MainEmission = () => {
             <div className="circle-progress">
                 <CircularProgressbar
                     value={progressPercentage}
-                    text={`${totalCO2}kg CO₂`}
+                    text={`${totalCO2.toFixed(2)}kg CO₂`}
                     maxValue={100}
                     styles={buildStyles({
                         pathColor: '#4caf50',

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './GreenAreas.scss'; // Zadbaj o odpowiednie style
+import './GreenAreas.scss';
 
 const greenAreas = [
     { name: "Park Jordana", area: 21.50, co2Absorption: 29.00 },

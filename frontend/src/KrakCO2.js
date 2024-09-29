@@ -14,8 +14,8 @@ const KrakCO2 = () => {
 
 
   const sections = [
-    { title: 'Kalkulator emisji CO2', component: <EmissionCalculator />},
-    { title: 'Kalkulator absorbcji CO2 przez drzewa', component: <EmissionConversion />},
+    { title: 'Kalkulator emisji CO₂', component: <EmissionCalculator />},
+    { title: 'Kalkulator absorpcji CO₂ przez drzewa', component: <EmissionConversion />},
     { title: 'Tereny zielone', component: <GreenAreas />},
     { title: 'Sektor transportu', component: <TransportSector />},
     { title: 'Sektor usługowy', component: <ServiceSector />},

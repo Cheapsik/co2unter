@@ -8,7 +8,7 @@ const Home = () => {
         return `/${name}`;
     }
 
-    const urls = ['Kalkulator absorbcji CO2 przez drzewa', 'Tereny zielone', 'Sektor transportu', 'Sektor usługowy', 'Sektor wydarzeń']
+    const urls = ['Kalkulator absorpcji CO₂ przez drzewa', 'Tereny zielone', 'Sektor transportu', 'Sektor usługowy', 'Sektor wydarzeń']
     
     return (
         <>
