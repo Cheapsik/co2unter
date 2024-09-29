@@ -1,26 +1,30 @@
 import { Link } from 'react-router-dom';
 import MainEmission from '../MainEmission';
-import './Home.scss';
 import DataSource from '../DataSource';
+import './Home.scss';
 
+const urlList = [
+    'Kalkulator absorpcji CO₂ przez drzewa',
+    'Tereny zielone',
+    'Sektor transportu',
+    'Sektor usługowy',
+    'Sektor wydarzeń'
+];
 
-const Home = () => {
-    const parseUrl = (url) => {
-        const name = url.toLowerCase().replace(/ /g, '-')
-        return `/${name}`;
-    }
+const parseUrl = (url) => `/${url.toLowerCase().replace(/ /g, '-')}`;
 
-    const urls = ['Kalkulator absorpcji CO₂ przez drzewa', 'Tereny zielone', 'Sektor transportu', 'Sektor usługowy', 'Sektor wydarzeń']
-    
-    return (
-        <>
-            <MainEmission />
+const Home = () => (
+    <>
+        <MainEmission />
             <div className="container">
-                {urls.map((url) => <Link key={url} to={parseUrl(url)} className="link">{url}</Link>)}
+                {urlList.map((url) => (
+                    <Link key={url} to={parseUrl(url)} className="link">
+                        {url}
+                    </Link>
+                ))}
             </div>
-            <DataSource/>
-        </>
-    );
-}
+        <DataSource />
+    </>
+);
 
 export default Home;
