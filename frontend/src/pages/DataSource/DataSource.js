@@ -1,8 +1,9 @@
 const DataSource = () => {
     return (
         <div className="calculator">
-           Data Source: 
-           https://www.facebook.com/IDzDPL/?locale=pl_PL
+            Data Source:
+            <a href="https://ztp.krakow.pl/" target="_blank">ZTP</a>
+            <a href="https://zzm.krakow.pl/" target="_blank">ZZM</a>
         </div>
     );
 }
