@@ -18,6 +18,7 @@ builder.Services.AddScoped<IServiceEmissionsRepository, ServiceEmissionsReposito
 builder.Services.AddScoped<ITreeEmissionEffectivityCalculateService, TreeEmissionEffectivityCalculateService>();
 builder.Services.AddScoped<ICarbonEmissionService, CarbonEmissionService>();
 builder.Services.AddScoped<IMassEventRepository, MassEventRepository>();
+builder.Services.AddScoped<IGreenAreaRepository, GreenAreaRepository>();
 
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.Configure<CarbonEmissionSettings>(builder.Configuration.GetSection("CarbonEmissionSettings"));

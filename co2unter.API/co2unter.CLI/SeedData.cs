@@ -89,27 +89,27 @@ public static class SeedData
         new DbMassEvent { Id = Guid.NewGuid(), Name = "Kraków Film Festival", Place = "Centrum Kongresowe", EventDate = new DateTimeOffset(new DateTime(2024, 11, 3)), EmmissionT = 5 },
     };
 
-    public static List<GreenArea> GreenAreas = new()
+    public static List<DbGreenArea> GreenAreas = new()
     {
-        new GreenArea   { Name = "Park Jordana", Area = 21.50, Co2Absorption = 29.00 },
-        new GreenArea   { Name = "Park Krakowski", Area = 25.00, Co2Absorption = 35.00 },
-        new GreenArea   { Name = "Ogród Botaniczny UJ", Area = 7.00, Co2Absorption = 10.00 },
-        new GreenArea   { Name = "Park Lotników Polskich", Area = 15.00, Co2Absorption = 20.00 },
-        new GreenArea   { Name = "Park Miejski na Błoniach", Area = 15.00, Co2Absorption = 20.00 },
-        new GreenArea   { Name = "Park Biedronki", Area = 3.00, Co2Absorption = 4.50 },
-        new GreenArea   { Name = "Park Lecha Kaczyńskiego", Area = 8.00, Co2Absorption = 11.00 },
-        new GreenArea   { Name = "Park Ratuszowy", Area = 2.50, Co2Absorption = 3.50 },
-        new GreenArea   { Name = "Skwer W. Wawel", Area = 5.00, Co2Absorption = 7.00 },
-        new GreenArea   { Name = "Park Szwedzki", Area = 6.00, Co2Absorption = 8.50 },
-        new GreenArea   { Name = "Park Strzelecki", Area = 4.00, Co2Absorption = 6.00 },
-        new GreenArea   { Name = "Las Wolski", Area = 30.00, Co2Absorption = 42.00 },
-        new GreenArea   { Name = "Tereny zielone na Krowodrzy", Area = 10.00, Co2Absorption = 14.00 },
-        new GreenArea   { Name = "Park na Dąbiu", Area = 4.50, Co2Absorption = 6.00 },
-        new GreenArea   { Name = "Ogród Doświadczeń", Area = 1.00, Co2Absorption = 1.50 },
-        new GreenArea   { Name = "Tereny zielone w Nowej Hucie", Area = 18.00, Co2Absorption = 25.00 },
-        new GreenArea   { Name = "Tereny zielone w Podgórzu", Area = 12.00, Co2Absorption = 16.00 },
-        new GreenArea   { Name = "Park im. Stanisława Wyspiańskiego", Area = 9.00, Co2Absorption = 12.00 },
-        new GreenArea   { Name = "Tereny zielone w rejonie Salwatora", Area = 10.00, Co2Absorption = 14.00 },
-        new GreenArea   { Name = "Zespół Parków Krajobrazowych w Krakowie", Area = 35.00, Co2Absorption = 49.00 }
+        new DbGreenArea   { Name = "Park Jordana", Area = 21.50, Co2Absorption = 29.00 },
+        new DbGreenArea   { Name = "Park Krakowski", Area = 25.00, Co2Absorption = 35.00 },
+        new DbGreenArea   { Name = "Ogród Botaniczny UJ", Area = 7.00, Co2Absorption = 10.00 },
+        new DbGreenArea   { Name = "Park Lotników Polskich", Area = 15.00, Co2Absorption = 20.00 },
+        new DbGreenArea   { Name = "Park Miejski na Błoniach", Area = 15.00, Co2Absorption = 20.00 },
+        new DbGreenArea   { Name = "Park Biedronki", Area = 3.00, Co2Absorption = 4.50 },
+        new DbGreenArea   { Name = "Park Lecha Kaczyńskiego", Area = 8.00, Co2Absorption = 11.00 },
+        new DbGreenArea   { Name = "Park Ratuszowy", Area = 2.50, Co2Absorption = 3.50 },
+        new DbGreenArea   { Name = "Skwer W. Wawel", Area = 5.00, Co2Absorption = 7.00 },
+        new DbGreenArea   { Name = "Park Szwedzki", Area = 6.00, Co2Absorption = 8.50 },
+        new DbGreenArea   { Name = "Park Strzelecki", Area = 4.00, Co2Absorption = 6.00 },
+        new DbGreenArea   { Name = "Las Wolski", Area = 30.00, Co2Absorption = 42.00 },
+        new DbGreenArea   { Name = "Tereny zielone na Krowodrzy", Area = 10.00, Co2Absorption = 14.00 },
+        new DbGreenArea   { Name = "Park na Dąbiu", Area = 4.50, Co2Absorption = 6.00 },
+        new DbGreenArea   { Name = "Ogród Doświadczeń", Area = 1.00, Co2Absorption = 1.50 },
+        new DbGreenArea   { Name = "Tereny zielone w Nowej Hucie", Area = 18.00, Co2Absorption = 25.00 },
+        new DbGreenArea   { Name = "Tereny zielone w Podgórzu", Area = 12.00, Co2Absorption = 16.00 },
+        new DbGreenArea   { Name = "Park im. Stanisława Wyspiańskiego", Area = 9.00, Co2Absorption = 12.00 },
+        new DbGreenArea   { Name = "Tereny zielone w rejonie Salwatora", Area = 10.00, Co2Absorption = 14.00 },
+        new DbGreenArea   { Name = "Zespół Parków Krajobrazowych w Krakowie", Area = 35.00, Co2Absorption = 49.00 }
     };
 }

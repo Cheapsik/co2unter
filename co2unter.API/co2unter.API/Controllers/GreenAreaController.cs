@@ -1,4 +1,5 @@
-﻿using co2unter.API.Models;
+﻿using co2unter.API.Interfaces;
+using co2unter.API.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace co2unter.API.Controllers
@@ -7,14 +8,17 @@ namespace co2unter.API.Controllers
     [ApiController]
     public class GreenAreaController : ControllerBase
     {
-        public GreenAreaController()
-        {  
+        private readonly IGreenAreaRepository _greenAreaRepository;
+
+        public GreenAreaController(IGreenAreaRepository greenAreaRepository)
+        {
+            _greenAreaRepository = greenAreaRepository;
         }
 
-        //[HttpGet]
-        //public Task<ActionResult<GreenArea>> GetAsync()
-        //{
-
-        //}
+        [HttpGet]
+        public async Task<ActionResult<GreenArea>> GetAsync()
+        {
+            return Ok(await _greenAreaRepository.GetAllAsync());
+        }
     }
 }

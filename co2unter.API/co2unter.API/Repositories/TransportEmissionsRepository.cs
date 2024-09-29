@@ -1,7 +1,6 @@
 ﻿using co2unter.API.Infrastructure;
 using co2unter.API.Infrastructure.Entities;
 using co2unter.API.Interfaces;
-using co2unter.API.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace co2unter.API.Repositories;
