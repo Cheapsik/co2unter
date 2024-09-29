@@ -52,8 +52,8 @@ const EventSector = () => {
         )}
       </section>
       
-      <h1>Wydarzenia</h1>
       <section className="description"> 
+      <h2>Ostatnie wydarzenia</h2>
         <div>
           <EventList eventList={eventData}></EventList>
         </div>

@@ -66,7 +66,7 @@ const EmissionConversion = () => {
 
                     <button type="submit" className="calculate-button">Oblicz</button>
 
-                    {absorpcjonData && <span>Czas: {absorpcjonData}</span> }
+                    {absorpcjonData && <span>Czas: <span className="time">{absorpcjonData}</span></span> }
                 </form>
             </div>
         </div>

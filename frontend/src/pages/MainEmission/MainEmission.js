@@ -57,7 +57,7 @@ const MainEmission = () => {
     return (
         <div className="summary-container">
             <h1>Dzień dobry</h1>
-            <h2>Oto podsumowanie twoich emisji</h2>
+            <h2>Podsumowanie Twoich emisji z tego miesiąca</h2>
             
             <div className="circle-progress">
                 <CircularProgressbar
@@ -65,9 +65,10 @@ const MainEmission = () => {
                     text={`${totalCO2}kg CO₂`}
                     maxValue={100}
                     styles={buildStyles({
-                        pathColor: '#16a085',
+                        pathColor: '#4caf50',
                         trailColor: '#d6d6d6',
                         strokeLinecap: 'round',
+                        textColor: '#4caf50'
                     })}
                 />
             </div>
@@ -75,9 +76,9 @@ const MainEmission = () => {
             <button className="redirect-button" onClick={goTo}>Dodaj emisję  CO₂</button>
 
             <div className="recent-journeys">
-                <h3>Ostatnie podróże</h3>
+                <h3>Ostatnie</h3>
                 {taskList.length === 0 ? (
-                    <p>Brak ostatnich podróży.</p>
+                    <p>Brak ostatnich emisji.</p>
                 ) : (
                     <div className="emission-list">
                         <EmissionList taskList={taskList} />

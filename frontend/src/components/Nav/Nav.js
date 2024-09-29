@@ -1,5 +1,7 @@
 import './Nav.scss';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouseChimney } from '@fortawesome/free-solid-svg-icons';
 
 
 const Nav = () => {
@@ -9,7 +11,13 @@ const Nav = () => {
 
   return (
     <>
-      {shouldDisplay && <nav><button className="home-button" onClick={() => navigate('/')}>Strona główna</button></nav>}
+      {shouldDisplay && 
+        <nav>
+          <button className="home-button" onClick={() => navigate('/')}>
+            <FontAwesomeIcon icon={faHouseChimney} />
+          </button>
+        </nav>
+        }
     </>
   );
 }

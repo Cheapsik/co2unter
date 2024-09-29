@@ -13,14 +13,20 @@
   .task-summary {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     span {
         color: black;
+        overflow: hidden;
+        text-overflow: elipsis;
+    }
+    .action-buttons {
+      display: flex;
+      min-width: 142px;
     }
   }
   
   .toggle-button {
-    background-color: #16a085;
+    background-color: #4caf50;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -30,7 +36,7 @@
   }
   
   .toggle-button:hover {
-    background-color: #1abc9c;
+    background-color: #4caf50;
   }
 
   .remove-button {
@@ -61,7 +67,7 @@
   
   h2 {
     font-size: 1.5em;
-    color: #16a085;
+    color: #4caf50;
     margin-left: 1rem;
   }
   
