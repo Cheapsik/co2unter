@@ -54,10 +54,10 @@ const EventSector = () => {
       </section>
       
       <section className="description"> 
-      <h2>Ostatnie wydarzenia</h2>
-        <div>
-          <EventList eventList={eventData}></EventList>
-        </div>
+        <h2>Ostatnie wydarzenia</h2>
+          <div>
+            <EventList eventList={eventData}></EventList>
+          </div>
       </section>
     </div>
   );
