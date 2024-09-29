@@ -1,4 +1,5 @@
-﻿using co2unter.API.Interfaces;
+﻿using co2unter.API.Infrastructure.Entities;
+using co2unter.API.Interfaces;
 using co2unter.API.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,7 +19,9 @@ namespace co2unter.API.Controllers
         [HttpGet]
         public async Task<ActionResult<GreenArea>> GetAsync()
         {
-            return Ok(await _greenAreaRepository.GetAllAsync());
+            IEnumerable<DbGreenArea> greenAreas = await _greenAreaRepository.GetAllAsync();
+            List<GreenArea> greenAreaModels = greenAreas.Select(x => x.Map()).ToList();
+            return Ok(greenAreaModels);
         }
     }
 }

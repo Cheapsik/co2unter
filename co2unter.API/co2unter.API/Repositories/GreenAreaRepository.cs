@@ -1,10 +1,10 @@
 ﻿using co2unter.API.Infrastructure;
+using co2unter.API.Infrastructure.Entities;
 using co2unter.API.Interfaces;
-using co2unter.API.Models;
 
 namespace co2unter.API.Repositories
 {
-    public class GreenAreaRepository : GenericRepository<GreenArea>, IGreenAreaRepository
+    public class GreenAreaRepository : GenericRepository<DbGreenArea>, IGreenAreaRepository
     {
         private readonly Co2UnterDbContext _co2UnterDbContext;
 
