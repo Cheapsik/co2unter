@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import MainEmission from '../MainEmission';
-import DataSource from '../DataSource';
 import './Home.scss';
 
 const urlList = [
@@ -16,14 +15,13 @@ const parseUrl = (url) => `/${url.toLowerCase().replace(/ /g, '-')}`;
 const Home = () => (
     <>
         <MainEmission />
-            <div className="container">
-                {urlList.map((url) => (
-                    <Link key={url} to={parseUrl(url)} className="link">
-                        {url}
-                    </Link>
-                ))}
-            </div>
-        <DataSource />
+        <div className="container">
+            {urlList.map((url) => (
+                <Link key={url} to={parseUrl(url)} className="link">
+                    {url}
+                </Link>
+            ))}
+        </div>
     </>
 );
 
