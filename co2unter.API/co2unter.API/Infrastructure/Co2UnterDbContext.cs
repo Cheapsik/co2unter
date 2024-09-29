@@ -9,6 +9,7 @@ public class Co2UnterDbContext : DbContext
     public DbSet<DbServiceEmission> ServiceEmissions { get; set; }
     public DbSet<DbTransportEmission> TransportEmissions { get; set; }
     public DbSet<DbMassEvent> MassEvents { get; set; }
+    public DbSet<DbGreenArea> GreenAreas { get; set; }
 
     public Co2UnterDbContext() { }
 
@@ -23,5 +24,6 @@ public class Co2UnterDbContext : DbContext
         modelBuilder.ApplyConfiguration(new DbServiceEmissionEntityTypeConfiguration());
         modelBuilder.ApplyConfiguration(new DbTransportEmissionEntityTypeConfiguration());
         modelBuilder.ApplyConfiguration(new DbMassEventEntityTypeConfiguration());
+        modelBuilder.ApplyConfiguration(new DbGreenAreaEntityTypeConfiguration());
     }
 }
