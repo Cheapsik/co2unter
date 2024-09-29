@@ -1,22 +1,22 @@
 .data-source{
+    height: 1rem;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
     color: white;
     padding: 1rem;
-    height: 1rem;
+    font-size: .9rem;
     background-color: rgba(0, 0, 0, 0.5);
 
     a {
-        margin-left: 1rem;
-        color:rgba(199, 199, 199, 0.5);
+        color: #4caf50;
+        margin-left: .5rem;
     }
 
-    .special-section {
-
-        a{
-            color: rgba(0, 0, 0, 0);
+    .secret-section {
+        a {
+            color: transparent;
         }
     }
 }
