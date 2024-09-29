@@ -7,7 +7,7 @@ const TransportSector = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('https://krakco2.pl/api/TransportEmissions');
+      const response = await fetch(`${process.env.REACT_APP_API_URL ?? 'https://krakco2.pl/api/'}TransportEmissions`);
       const data = await response.json();
       setTransportData(data);
     };

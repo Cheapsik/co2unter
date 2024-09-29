@@ -1,8 +1,8 @@
-import './EventList.scss'
 import { format } from 'date-fns';
+import './EventList.scss'
 
 const EventList = ({ eventList }) => {
-        const headers = ['Nazwa', 'Data', 'Miejsce', 'Emisja[t]']
+        const headers = ['Nazwa', 'Miejsce', 'Emisja (t)', 'Data']
 
     return (
         <div>
@@ -10,9 +10,9 @@ const EventList = ({ eventList }) => {
             {eventList.map((event, id) => (
             <div className='event-wrapper' key={id}>                 
                 <span>{`${event.name}`}</span>
-                <span>{`${format(event.eventDate, 'dd/MM/yyyy')}`}</span>
                 <span>{`${event.place}`}</span>
                 <span>{`${event.emmissionT}`}</span>
+                <span className="gray">{`${format(event.eventDate, 'dd/MM/yyyy')}`}</span>
             </div>
           ))}              
         </div>

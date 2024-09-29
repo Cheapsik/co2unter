@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import './EventSector.scss';
 import EventList from '../../components/EventList';
+import './EventSector.scss';
 
 const EventSector = () => {
   const [showDetails, setShowDetails] = useState(false);
@@ -10,8 +10,9 @@ const EventSector = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('https://krakco2.pl/api/MassEvent/all');
+      const response = await fetch(`${process.env.REACT_APP_API_URL ?? 'https://krakco2.pl/api/'}MassEvent/all`);
       const data = await response.json();
+
       setEventData(data);
     };
     

@@ -30,15 +30,12 @@ const EmissionConversion = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        try {
-            const response = await fetch(`https://krakco2.pl/api/TreeEmissionEffectivityCalculator/Calculate/Time/${treeType}?co2weight=${co2Amount}`);
-            const data = await response.json();
-            const time = timeMapper(data)
-            setAbsorpcjonData(time);
-            return data;
-        } catch (error) {
-            throw new Error(error)
-        }
+        const response = await fetch(`${process.env.REACT_APP_API_URL ?? 'https://krakco2.pl/api/'}TreeEmissionEffectivityCalculator/Calculate/Time/${treeType}?co2weight=${co2Amount}`);
+        const data = await response.json();
+        const time = timeMapper(data);
+        
+        setAbsorpcjonData(time);
+        return data;
     };
 
     return (
