@@ -1,29 +1,29 @@
 .summary-container {
     color: #4caf50;
-    border-radius: 10px;
+    border-radius: 1rem;
     margin-top: 1rem;
 
     h1 {
         width: max-content;
         color: white;
-        font-size: 2em;
-        padding: 10px 30px 10px 20px;
+        font-size: 2rem;
+        padding: 1rem 3rem 1rem 2rem;
         background-color: #4caf50;
-        border-radius: 0 12px 12px 0;
+        border-radius: 0 1.2rem 1.2rem 0;
     }
 
     h2 {
-        font-size: 1.5em;
-        margin: 30px 20px 10px 20px;
+        font-size: 1.5rem;
+        margin: 3rem 2rem 1rem 2rem;
         text-align: center;
     }
 
     .co2-value {
-        font-size: 2.5em;
+        font-size: 2.5rem;
     }
 
     .co2-text {
-        font-size: 1.2em;
+        font-size: 1.2rem;
     }
 
     .circle-progress {
@@ -41,10 +41,10 @@
         background-color: #4caf50;
         color: white;
         border: none;
-        padding: 10px 15px;
-        font-size: 0.9em;
+        padding: 1rem 1.5rem;
+        font-size: 0.9rem;
         cursor: pointer;
-        border-radius: 5px;
+        border-radius: 0.5rem;
         margin: 3rem auto 2rem;
         &:hover {
             background-color: #4caf50;
@@ -55,7 +55,7 @@
         padding: 1rem;
 
         h3 {
-            margin-bottom: .5rem;
+            margin-bottom: 0.5rem;
         }
     }
 }

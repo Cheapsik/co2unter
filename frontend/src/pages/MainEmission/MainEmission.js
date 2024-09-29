@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import './MainEmission.scss';
 import EmissionList from '../../components/EmissionList/EmissionList';
 import { useNavigate } from 'react-router-dom';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import './MainEmission.scss';
 
 const MainEmission = () => {
     const [taskList, setTaskList] = useState([]);
