@@ -2,10 +2,12 @@
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(4, 1fr);
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 
   &.header  {
     margin-top: 1rem;
     font-weight: bold;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid #4caf50;
   }
 }

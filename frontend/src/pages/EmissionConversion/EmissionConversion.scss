@@ -39,7 +39,15 @@
                 cursor: pointer;
 
                 &:hover {
-                    background-color: #45a049;
+                    background-color: #4caf50;
+                }
+            }
+
+            span {
+                margin-top: 2rem;
+                font-size: 1.4rem;
+                .time {
+                    color: #4caf50;
                 }
             }
         }

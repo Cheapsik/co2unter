@@ -34,7 +34,7 @@ const EmissionList = ({ taskList }) => {
                 <li key={task.id} className="task-item">
                     <div className="task-summary">
                         <span>{`${task.name} - ${task.distance} km`}</span>
-                        <div>
+                        <div className="action-buttons">
                             <button onClick={() => toggleDetails(task.id)} className="toggle-button">
                                 {task.detailsVisible ? 'Ukryj szczegóły' : 'Pokaż więcej'}
                             </button>

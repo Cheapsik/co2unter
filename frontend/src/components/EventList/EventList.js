@@ -2,7 +2,7 @@ import './EventList.scss'
 import { format } from 'date-fns';
 
 const EventList = ({ eventList }) => {
-        const headers = ['Nazwa', 'Data wydarzenia', 'Miejsce', 'Emisja']
+        const headers = ['Nazwa', 'Data', 'Miejsce', 'Emisja']
 
     return (
         <div>

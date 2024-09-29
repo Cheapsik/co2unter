@@ -30,18 +30,18 @@ const KrakCO2 = () => {
   return (
     <div className="App">
       <Router>
-            <Nav />
-            <Routes>
-              <Route path="/" element={<Home />} />
-                {sections.map((section, idx) => (
-                  <Route
-                    key={idx}
-                    path={`/${getUrl(section.title)}`}
-                    element={section.component}
-                  />
-                ))}
-            </Routes>
-        </Router>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+            {sections.map((section, idx) => (
+              <Route
+                key={idx}
+                path={`/${getUrl(section.title)}`}
+                element={section.component}
+              />
+            ))}
+        </Routes>
+      </Router>
     </div>
   );
 }

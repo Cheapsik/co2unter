@@ -1,7 +1,7 @@
 nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     height: 6rem;
     color: white;
     padding: 1rem;
@@ -9,11 +9,12 @@ nav {
 }
 
 .home-button {
-    background-color: #1abc9c;
+    background-color: #4caf50;
     color: white;
     border: none;
     padding: 10px 15px;
     font-size: 1em;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 2rem;
 }
