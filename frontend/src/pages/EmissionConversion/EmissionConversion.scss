@@ -1,0 +1,55 @@
+.emission-conversion-container {
+    padding: 10px;
+    h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .tree-calculator-container {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        margin: auto;
+
+        .calculator-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            label {
+                color: #555;
+            }
+
+            select,
+            input {
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 16px;
+            }
+
+            .calculate-button {
+                background-color: #4caf50;
+                color: white;
+                border: none;
+                padding: 10px;
+                border-radius: 4px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #4caf50;
+                }
+            }
+
+            span {
+                margin-top: 2rem;
+                font-size: 1.4rem;
+                .time {
+                    color: #4caf50;
+                }
+            }
+        }
+    }
+}

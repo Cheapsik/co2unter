@@ -1,0 +1,58 @@
+.calculator-container {
+    height: 100%;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+  
+  h1 {
+    font-size: 2em;
+    margin: 40px 0 30px 10px;
+  }
+  
+  h2 {
+    margin-left: 1rem;
+  }
+  
+  .calculator-form {
+    background-color: #f9f9f9;
+    padding: 20px 10px;
+    border-radius: 22px 22px 0 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .emission-list-container {
+    background-color: white;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #34495e;
+  }
+  
+  input,
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+  }
+  
+  .submit-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .submit-button:hover {
+    background-color: #4caf50;
+  }
+}

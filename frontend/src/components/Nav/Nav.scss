@@ -1,10 +1,20 @@
 nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-color: black;
-    height: 8rem;
-    margin-bottom: 1.5rem;
+    justify-content: flex-end;
+    height: 6rem;
     color: white;
-    padding: 1.5rem;
+    padding: 1rem;
+    background-color: transparent;
+}
+
+.home-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 2rem;
 }

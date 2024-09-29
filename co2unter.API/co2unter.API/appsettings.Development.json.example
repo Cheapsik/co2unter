@@ -1,0 +1,17 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "ConnectionStrings": {
+    "DefaultConnection": "Host=localhost:5432;Port=5432;Database=co2unter;Username=postgres;Password=postgres;"
+  },
+  "CarbonEmissionSettings": {
+    "ApiKey": "secret"
+  },
+  "OpenWeatherMapSettings": {
+    "ApiKey": "secret"
+  }
+}

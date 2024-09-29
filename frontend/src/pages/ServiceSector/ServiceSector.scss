@@ -1,20 +1,18 @@
 .service-container {
-    padding: 20px;
+    padding: 10px;
     max-width: 800px;
     margin: 0 auto;
     font-family: 'Arial', sans-serif;
-  }
   
   h1 {
     font-size: 2em;
-    color: #2c3e50;
     text-align: left;
     margin-bottom: 20px;
   }
   
   .description {
     background-color: #f9f9f9;
-    padding: 20px;
+    padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
@@ -22,7 +20,7 @@
   
   h2 {
     font-size: 1.5em;
-    color: #16a085;
+    color: #4caf50;
   }
   
   p {
@@ -31,7 +29,7 @@
   }
   
   .toggle-button {
-    background-color: #16a085;
+    background-color: #4caf50;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -42,7 +40,7 @@
   }
   
   .toggle-button:hover {
-    background-color: #1abc9c;
+    background-color: #4caf50;
   }
   
   .details {
@@ -51,22 +49,4 @@
     padding-top: 10px;
     color: #34495e;
   }
-  
-  .other-sectors {
-    margin-top: 20px;
-  }
-  
-  @media (max-width: 600px) {
-    .container {
-      padding: 10px;
-    }
-  
-    h1 {
-      font-size: 1.5em;
-    }
-  
-    h2 {
-      font-size: 1.2em;
-    }
-  }
-  
+}

@@ -1,21 +1,25 @@
 import { Link } from 'react-router-dom';
+import MainEmission from '../MainEmission';
+import './Home.scss';
 import DataSource from '../DataSource';
 
 
 const Home = () => {
-
     const parseUrl = (url) => {
         const name = url.toLowerCase().replace(/ /g, '-')
         return `/${name}`;
-      }
+    }
 
-    const urls = ['Indywidualne działania mieszkańców', 'Transport', 'Sektor usługowy', 'Wydarzenia']
+    const urls = ['Kalkulator absorbcji CO2 przez drzewa', 'Tereny zielone', 'Sektor transportu', 'Sektor usługowy', 'Sektor wydarzeń']
     
     return (
-        <div className="container">
-            {urls.map((url) => <Link key={url} to={parseUrl(url)} className="link">{url}</Link>)}
+        <>
+            <MainEmission />
+            <div className="container">
+                {urls.map((url) => <Link key={url} to={parseUrl(url)} className="link">{url}</Link>)}
+            </div>
             <DataSource/>
-        </div>
+        </>
     );
 }
 

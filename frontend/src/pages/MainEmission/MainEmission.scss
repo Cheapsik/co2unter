@@ -1,0 +1,61 @@
+.summary-container {
+    color: #4caf50;
+    border-radius: 10px;
+    margin-top: 1rem;
+
+    h1 {
+        width: max-content;
+        color: white;
+        font-size: 2em;
+        padding: 10px 30px 10px 20px;
+        background-color: #4caf50;
+        border-radius: 0 12px 12px 0;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        margin: 30px 20px 10px 20px;
+        text-align: center;
+    }
+
+    .co2-value {
+        font-size: 2.5em;
+    }
+
+    .co2-text {
+        font-size: 1.2em;
+    }
+
+    .circle-progress {
+        width: 50%;
+        margin: 0 auto;
+        text {
+            font-size: 1.2rem;
+        }
+    }
+
+    .redirect-button {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 0.9em;
+        cursor: pointer;
+        border-radius: 5px;
+        margin: 5rem auto 2rem;
+        &:hover {
+            background-color: #4caf50;
+        }
+    }
+
+    .recent-journeys {
+        padding: 1rem;
+
+        h3 {
+            margin-bottom: .5rem;
+        }
+    }
+}

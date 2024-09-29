@@ -1,5 +1,8 @@
+using co2unter.API;
 using co2unter.API.Interfaces;
+using co2unter.API.Repositories;
 using co2unter.API.Services;
+using co2unter.API.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,9 +13,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<ITransportEmissionsService, TransportEmissionsService>();
-builder.Services.AddScoped<IServiceEmissionsService, ServiceEmissionsService>();
+builder.Services.AddScoped<ITransportEmissionsRepository, TransportEmissionsRepository>();
+builder.Services.AddScoped<IServiceEmissionsRepository, ServiceEmissionsRepository>();
 builder.Services.AddScoped<ITreeEmissionEffectivityCalculateService, TreeEmissionEffectivityCalculateService>();
+builder.Services.AddScoped<IMassEventRepository, MassEventRepository>();
+builder.Services.AddScoped<IGreenAreaRepository, GreenAreaRepository>();
+
+builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.Configure<CarbonEmissionSettings>(builder.Configuration.GetSection("CarbonEmissionSettings"));
+builder.Services.Configure<OpenWeatherMapSettings>(builder.Configuration.GetSection("OpenWeatherMapSettings"));
 
 var app = builder.Build();
 

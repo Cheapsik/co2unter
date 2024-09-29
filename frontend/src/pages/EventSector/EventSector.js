@@ -1,20 +1,32 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './EventSector.scss';
+import EventList from '../../components/EventList';
 
 const EventSector = () => {
   const [showDetails, setShowDetails] = useState(false);
+  const [eventData, setEventData] = useState([]);
 
   const toggleDetails = () => setShowDetails(!showDetails);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('https://krakco2.pl/api/MassEvent/all');
+      const data = await response.json();
+      setEventData(data);
+    };
+    
+    fetchData();
+  }, []);
+
   return (
     <div className="event-container">
-      <h1>Emisje CO2 związane z Wydarzeniami</h1>
+      <h1>Emisje  CO₂ związane z Wydarzeniami</h1>
 
       <section className="description">
-        <h2>Wydarzenia masowe a emisja CO2</h2>
+        <h2>Wydarzenia masowe a emisja  CO₂</h2>
         <p>
           Organizacja wydarzeń masowych, zarówno stacjonarnych, jak i plenerowych, generuje znaczną
-          ilość emisji CO2. Wydarzenia takie jak koncerty, festiwale, targi czy konferencje wiążą
+          ilość emisji  CO₂. Wydarzenia takie jak koncerty, festiwale, targi czy konferencje wiążą
           się z transportem uczestników, użyciem energii do oświetlenia, nagłośnienia, a także
           produkcją odpadów. Każdy z tych elementów przyczynia się do wzrostu emisji gazów cieplarnianych.
         </p>
@@ -24,7 +36,7 @@ const EventSector = () => {
         {showDetails && (
           <div className="details">
             <p>
-              Na przykład, transport uczestników do miejsca wydarzenia generuje emisję CO2, szczególnie
+              Na przykład, transport uczestników do miejsca wydarzenia generuje emisję  CO₂, szczególnie
               jeśli dominują auta osobowe. Użycie publicznego transportu lub organizacja wspólnych dojazdów
               mogą znacznie zmniejszyć ten ślad węglowy. Dodatkowo, wydarzenia plenerowe często
               wymagają zastosowania dużej ilości jednorazowych opakowań oraz materiałów promocyjnych,
@@ -39,15 +51,12 @@ const EventSector = () => {
           </div>
         )}
       </section>
-
-      <section className="other-sectors">
-        <h2>Możliwości redukcji emisji</h2>
-        <p>
-          Kluczowe dla organizatorów wydarzeń jest monitorowanie i analiza emisji związanych z każdym
-          etapem organizacji. Porównując różne typy wydarzeń oraz sposoby ich organizacji, można
-          zidentyfikować najbardziej efektywne metody redukcji emisji, co ma ogromne znaczenie w
-          kontekście zrównoważonego rozwoju i ochrony środowiska.
-        </p>
+      
+      <section className="description"> 
+      <h2>Ostatnie wydarzenia</h2>
+        <div>
+          <EventList eventList={eventData}></EventList>
+        </div>
       </section>
     </div>
   );

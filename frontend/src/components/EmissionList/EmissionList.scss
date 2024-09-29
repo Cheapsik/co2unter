@@ -1,0 +1,78 @@
+.task-list {
+    list-style: none;
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+
+  .task-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+  }
+  
+  .task-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span {
+        color: black;
+        overflow: hidden;
+        text-overflow: elipsis;
+    }
+    .action-buttons {
+      display: flex;
+      min-width: 142px;
+    }
+  }
+  
+  .toggle-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 0.9em;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .toggle-button:hover {
+    background-color: #4caf50;
+  }
+
+  .remove-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  
+  .remove-button:hover {
+    background-color: #c0392b;
+  }
+  
+  .task-details {
+    margin-top: 10px;
+    border-top: 1px solid #e1e1e1;
+    padding-top: 10px;
+  }
+
+  .emission-list {
+    height: 20rem;
+    background-color: white;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+    color: #4caf50;
+    margin-left: 1rem;
+  }
+  
+  p {
+    line-height: 1.6;
+    color: #34495e;
+  }
+}
